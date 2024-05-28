@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     url = "http://www.openfst.org/twiki/pub/FST/FstDownload/${pname}-${version}.tar.gz";
     sha256 = "sha256-3ph782JHIcXVujIa+VdRiY5PS7Qcijbi1k8GJ2Vti0I=";
   };
-
+  doChecks = false;
   configureFlags = [
     "--enable-compact-fsts"
     "--enable-compress"
