@@ -31,8 +31,8 @@ stdenv.mkDerivation rec {
   #                     '';
   buildPhase = ''
                 cmake .
-                #make all
+                make all
                '';
- installPhase = '' touch $out/bin '';
+ installPhase = '' mkdir $out/bin '';
 }
 
