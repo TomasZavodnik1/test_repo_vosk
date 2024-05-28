@@ -24,8 +24,8 @@ stdenv.mkDerivation rec {
   pname = "vosk";
   version = "v0.15";
   src = ./.;
-  buildInputs = [ pkgs.kaldi ];
-  nativeBuildInputs =  [  ];
+  buildInputs = [ pkgs.kaldi cmake ];
+  nativeBuildInputs =  [ cmake ];
   #configurationPhase = ''
   #                     ls  
   #                     '';
