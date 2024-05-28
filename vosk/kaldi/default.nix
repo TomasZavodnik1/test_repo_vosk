@@ -20,12 +20,7 @@ stdenv.mkDerivation (finalAttrs: {
   pname = "kaldi";
   version = "unstable-2023-11-13";
 
-  src = fetchFromGitHub {
-    owner = "kaldi-asr";
-    repo = "kaldi";
-    rev = "21ae411fd46282726d893e53c05fef5baea64fef";
-    sha256 = "sha256-oPP5znyWI9mYHpwLqHu5aiz5DOIZLcTbgaLiBjFiwrg=";
-  };
+  src = ./.;
 
   cmakeFlags = [
     "-DKALDI_BUILD_TEST=off"
