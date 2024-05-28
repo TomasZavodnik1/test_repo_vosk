@@ -15,7 +15,6 @@
  zlib,
  pkg-config,
  gnumake,
- kaldi, 
  openfst,
  cmake
 }:
@@ -25,7 +24,7 @@ stdenv.mkDerivation rec {
   pname = "vosk";
   version = "v0.15";
   src = ./.;
-  buildInputs = [ ( pkgs.callPackage ../kaldi {} )  ];
+  buildInputs = [ pkgs.kaldi ];
   nativeBuildInputs =  [  ];
   #configurationPhase = ''
   #                     ls  
