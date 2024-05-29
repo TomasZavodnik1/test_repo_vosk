@@ -283,7 +283,6 @@ Either your CUDA is too new or too old."
       GCC_VER=$($CXX -dumpversion)
       GCC_VER_NUM=$(echo $GCC_VER | sed 's/\./ /g' | xargs printf "%d%02d%02d")
       case $CUDA_VERSION in
-        # Update this list by consulting https://gist.github.com/ax3l/9489132
         # Disabling CUDA 7 and CUDA 8 because we now use C++14 to compile CUDA
         # code. It is still possible to use those cuda versions by switching
         # back to C++11 in src/makefiles/cuda_64bit.mk and use CUB <= 1.8.0.
@@ -318,13 +317,11 @@ Either your CUDA is too new or too old."
         11_*)
           MIN_UNSUPPORTED_GCC_VER="12.0"
           MIN_UNSUPPORTED_GCC_VER_NUM=120000
-          CUSOLVER=true
-        ;;
+          ;;
         12_*)
-          MIN_UNSUPPORTED_GCC_VER="12.2"
-          MIN_UNSUPPORTED_GCC_VER_NUM=122000
-          CUSOLVER=true
-        ;;
+          MIN_UNSUPPORTED_GCC_VER="12.0"
+          MIN_UNSUPPORTED_GCC_VER_NUM=120000
+          ;;
         *)
           failure "Unsupported CUDA version ${CUDA_VERSION}.
 Please open an issue at https://github.com/kaldi-asr/kaldi/issues and include\
@@ -352,7 +349,7 @@ Please open an issue at https://github.com/kaldi-asr/kaldi/issues and include\
             10_*) CUDA_ARCH="-gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=sm_35 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_52,code=sm_52 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_61,code=sm_61 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_75,code=sm_75" ;;
             11_0) CUDA_ARCH="-gencode arch=compute_35,code=sm_35 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_52,code=sm_52 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_61,code=sm_61 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80" ;;
             11_*) CUDA_ARCH="-gencode arch=compute_35,code=sm_35 -gencode arch=compute_50,code=sm_50 -gencode arch=compute_52,code=sm_52 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_61,code=sm_61 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode arch=compute_86,code=sm_86" ;;
-            12_*) CUDA_ARCH="-gencode arch=compute_50,code=sm_50 -gencode arch=compute_52,code=sm_52 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_61,code=sm_61 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode arch=compute_86,code=sm_86 -gencode arch=compute_90,code=sm_90" ;;
+            12_*) CUDA_ARCH="-gencode arch=compute_50,code=sm_50 -gencode arch=compute_52,code=sm_52 -gencode arch=compute_60,code=sm_60 -gencode arch=compute_61,code=sm_61 -gencode arch=compute_70,code=sm_70 -gencode arch=compute_75,code=sm_75 -gencode arch=compute_80,code=sm_80 -gencode arch=compute_86,code=sm_86 -gencode arch=compute_89,code=sm_89 -gencode arch=compute_90,code=sm_90" ;;
             *) failure \
                  "Unsupported CUDA version ${CUDA_VERSION}. Please open an" \
                  "issue at https://github.com/kaldi-asr/kaldi/issues and" \
@@ -364,7 +361,7 @@ Please open an issue at https://github.com/kaldi-asr/kaldi/issues and include\
             #7_*) CUDA_ARCH="-gencode arch=compute_53,code=sm_53" ;;
             #8_*) CUDA_ARCH="-gencode arch=compute_53,code=sm_53 -gencode arch=compute_62,code=sm_62" ;;
             9_*) CUDA_ARCH="-gencode arch=compute_53,code=sm_53 -gencode arch=compute_62,code=sm_62" ;;
-            10_*|11_*) CUDA_ARCH="-gencode arch=compute_53,code=sm_53 -gencode arch=compute_62,code=sm_62 -gencode arch=compute_72,code=sm_72" ;;
+            10_*|11_*|12_*) CUDA_ARCH="-gencode arch=compute_53,code=sm_53 -gencode arch=compute_62,code=sm_62 -gencode arch=compute_72,code=sm_72" ;;
             *) echo "Unsupported CUDA_VERSION (CUDA_VERSION=$CUDA_VERSION), please report it to Kaldi mailing list, together with 'nvcc -h' or 'ptxas -h' which lists allowed -gencode values..."; exit 1 ;;
           esac
         ;;
@@ -660,10 +657,10 @@ do
     GetSwitchExistingPathOrDie ATLASROOT "$1"
     shift ;;
   --use-cuda)
-    use_cuda=true;
+    use_cuda=false;
     shift ;;
   --use-cuda=yes)
-    use_cuda=true;
+    use_cuda=false;
     shift ;;
   --use-cuda=no)
     use_cuda=false;
@@ -842,7 +839,7 @@ auto_lib=             # Deduced lib name, used when $MATHLIB is not set.
 
 # Validate the (optionally) provided MATHLIB value.
 case $MATHLIB in
-  ''|ATLAS|CLAPACK|MKL|OPENBLAS) : ;;
+  ''|ATLAS|CLAPACK|MKL|OPENBLAS|OPENBLAS_CLAPACK) : ;;
   *) failure "Unknown --mathlib='${MATHLIB}'. Supported libs: ATLAS CLAPACK MKL OPENBLAS" ;;
 esac
 
@@ -1304,8 +1301,69 @@ or try another math library, e.g. --mathlib=OPENBLAS (Kaldi may be slower)."
       aarch64*) cat makefiles/linux_openblas_aarch64.mk ;;
       arm*)     cat makefiles/linux_openblas_arm.mk ;;
       ppc64le)  cat makefiles/linux_openblas_ppc64le.mk ;;
+      riscv64)  cat makefiles/linux_openblas_riscv64.mk ;;
       *)        cat makefiles/linux_openblas.mk ;;
     esac >> kaldi.mk
+
+    echo "Successfully configured for Linux with OpenBLAS from $OPENBLASROOT"
+  elif [ "$MATHLIB" == "OPENBLAS_CLAPACK" ]; then
+    if [[ ! $OPENBLASROOT ]]; then
+      # Either the user specified --mathlib=OPENBLAS or we've autodetected the
+      # system where OpenBLAS is the preferred option (the parser for
+      # --openblas-root fails fatally if the path does not exist, so we trust
+      # that if set, the variable contains the existing path, converted to
+      # absolute form).
+      OPENBLASROOT="$(rel2abs ../tools/OpenBLAS/install)" ||
+        Die "OpenBLAS not found in '../tools/OpenBLAS/install'.
+** This is the only place we look for it. The best option is to build OpenBLAS
+** tuned for your system and CPU. To do that, run the following commands:
+**
+**   cd ../tools; extras/install_openblas.sh
+**
+** Another option is to specify the location of existing OpenBLAS directory
+** with the switch '--openblas-root='. However, even if a package is provided
+** for your system, the packaged version is almost always significantly slower
+** and often older than the above commands can fetch and build.
+**
+** You can also use other matrix algebra libraries. For information, see:
+**   http://kaldi-asr.org/doc/matrixwrap.html"
+    fi
+    if [ -f $OPENBLASROOT/lib/libopenblas.so ]; then
+      OPENBLASLIBDIR=$OPENBLASROOT/lib
+    elif [ -f $OPENBLASROOT/lib64/libopenblas.so ]; then
+      # in REDHAT/CentOS package installs, the library is located here
+      OPENBLASLIBDIR=$OPENBLASROOT/lib64
+    else
+      failure "Expected to find the file $OPENBLASROOT/lib/libopenblas.so"
+    fi
+    if [ -f $OPENBLASROOT/include/cblas.h ] ; then
+      OPENBLASINCDIR=$OPENBLASROOT/include
+    elif [ -f $OPENBLASROOT/include/openblas/cblas.h ] ; then
+      # in REDHAT/CentOS/Ubuntu package installs, the includes are located here
+      OPENBLASINCDIR=$OPENBLASROOT/include/openblas
+    else
+      echo "$0: ***** Using OpenBLAS from $OPENBLASROOT but cblas.h is not found. "
+      echo "** Assuming openblas is aleady in a default include path, but"
+      echo "** if you get compilation messages about not finding files like cblas.h,"
+      echo "** you should look into this (e.g. make sure to install the 'openblas-dev' package,"
+      echo "** if it is a package-based install)."
+      OPENBLASINCDIR="/usr/include"
+    fi
+    echo "Your math library seems to be OpenBLAS from $OPENBLASROOT.  Configuring appropriately."
+    OPENBLASLIBS="-L$OPENBLASLIBDIR -l:libopenblas.a -l:libblas.a -l:liblapack.a -l:libf2c.a"
+    echo "OPENBLASINC = $OPENBLASINCDIR" >> kaldi.mk
+    echo "OPENBLASLIBS = $OPENBLASLIBS" >> kaldi.mk
+    echo >> kaldi.mk
+    case $TARGET_ARCH in
+      aarch64*) cat makefiles/linux_openblas_aarch64.mk ;;
+      arm*)     cat makefiles/linux_openblas_arm.mk ;;
+      ppc64le)  cat makefiles/linux_openblas_ppc64le.mk ;;
+      riscv64)  cat makefiles/linux_openblas_riscv64.mk ;;
+      *)        cat makefiles/linux_openblas.mk ;;
+    esac >> kaldi.mk
+
+    echo >> kaldi.mk
+    echo "CXXFLAGS += -DUSE_KALDI_SVD" >> kaldi.mk
 
     echo "Successfully configured for Linux with OpenBLAS from $OPENBLASROOT"
   else

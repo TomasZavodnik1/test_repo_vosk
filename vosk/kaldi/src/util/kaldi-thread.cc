@@ -22,7 +22,7 @@
 #include "util/kaldi-thread.h"
 
 namespace kaldi {
-int32 g_num_threads = 8;  // Initialize this global variable.
+int32 g_num_threads = 4;  // Initialize this global variable.
 
 MultiThreadable::~MultiThreadable() {
   // default implementation does nothing

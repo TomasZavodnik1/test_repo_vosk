@@ -79,8 +79,9 @@ int main(int argc, char *argv[]) {
     fst::Fst<fst::StdArc> *decode_fst;
     fst::SymbolTable *word_syms;
     ReadModels(opts, &trans_model, &am_nnet, &decode_fst, &word_syms);
+    OnlineNnet2FeaturePipelineInfo feature_info(opts.feature_config);
     BatchedThreadedNnet3CudaOnlinePipeline cuda_pipeline(
-        opts.batched_decoder_config, *decode_fst, am_nnet, trans_model);
+        opts.batched_decoder_config, feature_info, *decode_fst, am_nnet, trans_model);
     delete decode_fst;
     if (word_syms) cuda_pipeline.SetSymbolTable(*word_syms);
 

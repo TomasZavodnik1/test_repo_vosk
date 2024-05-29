@@ -1,91 +1,51 @@
-{ lib
-, stdenv
-, openblas
-, blas
-, lapack
-, icu
-, cmake
-, pkg-config
-, fetchFromGitHub
-, python3
-, _experimental-update-script-combinators
-, common-updater-scripts
-, ripgrep
-, unstableGitUpdater
-, writeShellScript
-}:
-
-assert blas.implementation == "openblas" && lapack.implementation == "openblas";
-stdenv.mkDerivation (finalAttrs: {
-  pname = "kaldi";
-  version = "unstable-2023-11-13";
-
+#{
+# pkgs,
+# libtool,
+# mkl,
+# python27,
+# subversion,
+# python39,
+# sox,
+# gfortran,
+# wget,
+# git,
+# unzip,
+# automake,
+# autoconf,
+# zlib,
+# pkg-config,
+# gnumake,
+# cmake
+#}:
+with import <nixpkgs> {};
+with pkgs;
+stdenv.mkDerivation rec {
+  pname = "vosk";
+  version = "v0.15";
   src = ./.;
+  buildInputs = [ gfortran perl cmake bash python39 autoconf automake zlib unzip sox libtool ];
+  nativeBuildInputs =  [ ];
+  configurePhase = ''
+                       ls  
+                       '';
+  buildPhase = ''
+                cd tools/
+                #make openfst cub
+                ls
+                pwd
+                cd extras/OpenBLAS
+                #sh extras/install_openblas_clapack.sh
+                make  ONLY_CBLAS=1 DYNAMIC_ARCH=1 TARGET=CORTEXA57 USE_LOCKING=1 USE_THREAD=0 NUM_THREADS=512 all
+                make install PREFIX=/build/kaldi/tools/extras/OpenBLAS/install
+                #cd ../clapack
+                #mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t ../../OpenBLAS/install/lib
+                #cd ../../../../src
+                #sh configure --mathlib=OPENBLAS_CLAPACK --shared
+                #make -j 10 online2 lm rnnlm                
+                #cd ../vosk/src
+                #KALDI_ROOT=../../ make
+                
+               '';
+ installPhase = '' mkdir $out/bin '';
+}
 
-  cmakeFlags = [
-    "-DKALDI_BUILD_TEST=off"
-    "-DBUILD_SHARED_LIBS=on"
-    "-DBLAS_LIBRARIES=-lblas"
-    "-DLAPACK_LIBRARIES=-llapack"
-    "-DFETCHCONTENT_SOURCE_DIR_OPENFST:PATH=${finalAttrs.passthru.sources.openfst}"
-  ];
-
-  buildInputs = [
-    openblas
-    icu
-  ];
-
-  nativeBuildInputs = [
-    cmake
-    pkg-config
-    python3
-  ];
-
-  preConfigure = ''
-    cmakeFlagsArray+=(
-      # Extract version without the need for git.
-      # https://github.com/kaldi-asr/kaldi/blob/71f38e62cad01c3078555bfe78d0f3a527422d75/cmake/VersionHelper.cmake
-      # Patch number is not actually used by default so we can just ignore it.
-      # https://github.com/kaldi-asr/kaldi/blob/71f38e62cad01c3078555bfe78d0f3a527422d75/CMakeLists.txt#L214
-      "-DKALDI_VERSION=$(cat src/.version)"
-    )
-  '';
-
-  postInstall = ''
-    mkdir -p $out/share/kaldi
-    cp -r ../egs $out/share/kaldi
-  '';
-
-  passthru = {
-    sources = {
-      # rev from https://github.com/kaldi-asr/kaldi/blob/master/cmake/third_party/openfst.cmake
-      openfst = fetchFromGitHub {
-        owner = "kkm000";
-        repo = "openfst";
-        rev = "338225416178ac36b8002d70387f5556e44c8d05";
-        hash = "sha256-MGEUuw7ex+WcujVdxpO2Bf5sB6Z0edcAeLGqW/Lo1Hs=";
-      };
-    };
-
-    updateScript =
-      let
-        updateSource = unstableGitUpdater {};
-        updateOpenfst = writeShellScript "update-openfst" ''
-          hash=$(${ripgrep}/bin/rg --multiline --pcre2 --only-matching 'FetchContent_Declare\(\s*openfst[^)]*GIT_TAG\s*([0-9a-f]{40})' --replace '$1' "${finalAttrs.src}/cmake/third_party/openfst.cmake")
-          ${common-updater-scripts}/bin/update-source-version kaldi.sources.openfst "$hash" --source-key=out "--version-key=rev"
-        '';
-      in
-      _experimental-update-script-combinators.sequence [
-        updateSource
-        updateOpenfst
-      ];
-  };
-
-  meta = with lib; {
-    description = "Speech Recognition Toolkit";
-    homepage = "https://kaldi-asr.org";
-    license = licenses.mit;
-    maintainers = with maintainers; [ mic92 ];
-    platforms = platforms.unix;
-  };
-})
