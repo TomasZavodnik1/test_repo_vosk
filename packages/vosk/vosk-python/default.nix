@@ -16,7 +16,7 @@
 #  pythonOlder,
 #  urllib3,
 #}:
-with import <nixpkgs> {};
+#with import <nixpkgs> {};
 with pkgs;
 
 pkgs.python39.pkgs.buildPythonPackage rec {
