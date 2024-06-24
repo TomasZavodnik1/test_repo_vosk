@@ -40,6 +40,8 @@ stdenv.mkDerivation rec {
                 mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t ../../OpenBLAS/install/lib
                 cd ../../../../src
 	        patchShebangs .
+                substituteInPlace Makefile --replace /bin/bash ${pkgs.bash}/bin/bash
+                substituteInPlace makefiles/default_rules.mk --replace /bin/bash ${pkgs.bash}/bin/bash
                 sh configure --openblas-root=/build/kaldi/tools/extras/OpenBLAS/install --static --fst-root=../tools/openfst --fst-version=1.8.0
                 make -j 10 online2 lm rnnlm
                '';
