@@ -3,7 +3,7 @@
 
   outputs = _: {
     dcModules = {
-      vosk = import ./vosk;
+      vosk = import ./packages/vosk;
     };
   };
 }

@@ -1,0 +1,2 @@
+/nix/store/a9kr77jici5pfcv8hprqncnmjlsrjhi4-gcc-wrapper-12.3.0/bin/ar qc libvosk.a CMakeFiles/vosk.dir/src/language_model.cc.o CMakeFiles/vosk.dir/src/model.cc.o CMakeFiles/vosk.dir/src/recognizer.cc.o CMakeFiles/vosk.dir/src/spk_model.cc.o CMakeFiles/vosk.dir/src/vosk_api.cc.o
+/nix/store/a9kr77jici5pfcv8hprqncnmjlsrjhi4-gcc-wrapper-12.3.0/bin/ranlib libvosk.a
