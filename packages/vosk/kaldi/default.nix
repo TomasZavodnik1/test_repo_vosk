@@ -35,12 +35,12 @@ stdenv.mkDerivation rec {
                 make openfst cub
                 cd extras/OpenBLAS                
                 make - ONLY_CBLAS=1 DYNAMIC_ARCH=1 TARGET=ARMV8 USE_LOCKING=1 USE_THREAD=0 NUM_THREADS=512 all
-                make PREFIX=/build/kaldi-vosk-pkg/tools/extras/OpenBLAS/install install
+                make PREFIX=/build/kaldi/tools/extras/OpenBLAS/install install
                 cd ../clapack
                 mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t ../../OpenBLAS/install/lib
                 cd ../../../../src
 	        patchShebangs .
-                sh configure --openblas-root=/build/kaldi-vosk-pkg/tools/extras/OpenBLAS/install --static --fst-root=../tools/openfst --fst-version=1.8.0
+                sh configure --openblas-root=/build/kaldi/tools/extras/OpenBLAS/install --static --fst-root=../tools/openfst --fst-version=1.8.0
                 make -j 10 online2 lm rnnlm
                '';
  installPhase = '' #mkdir $out
