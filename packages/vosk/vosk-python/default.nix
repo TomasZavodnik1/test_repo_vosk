@@ -1,21 +1,10 @@
-#{
-#  lib,
-#  stdenv,
-#  brotlicffi,
-#  buildPythonPackage,
-#  certifi,
-#  chardet,
-#  charset-normalizer,
-#  fetchPypi,
-#  fetchpatch,
-#  idna,
-#  pysocks,
-#  pytest-mock,
-#  pytest-xdist,
-#  pytestCheckHook,
-#  pythonOlder,
-#  urllib3,
-#}:
+{
+ pkgs,
+ cffi,
+ pip,
+ requests
+ 
+}:
 #with import <nixpkgs> {};
 with pkgs;
 
