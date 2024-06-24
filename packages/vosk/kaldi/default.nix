@@ -47,7 +47,9 @@ stdenv.mkDerivation rec {
                '';
  installPhase = '' #mkdir $out
                    mkdir -p $out/share/kaldi
-                   cp -r ../egs $out/share/kaldi
+                   pwd
+                   ls
+                   cp -r egs $out/share/kaldi
                    #mkdir $out/usr
                    #mkdir $out/usr/lib
                    #mkdir $out/usr/lib/python3.9
