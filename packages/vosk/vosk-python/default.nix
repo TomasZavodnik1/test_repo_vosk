@@ -1,8 +1,8 @@
 {
- pkgs,
- cffi,
- pip,
- requests
+ pkgs
+# cffi,
+# pip,
+# requests
  
 }:
 #with import <nixpkgs> {};
