@@ -48,11 +48,11 @@ stdenv.mkDerivation rec {
                 cd ../clapack
                 mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t ../../OpenBLAS/install/lib
                 
-                #cd ..
+                cd ..
                 mkdir $out/openblas
                 ls
                 pwd
-                cp -r install/* $out/openblas/
+                cp -r "install/*" "$out/openblas/"
 
                 cd ../../../src
 	        
