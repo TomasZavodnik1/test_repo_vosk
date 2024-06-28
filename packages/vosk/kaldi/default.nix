@@ -50,6 +50,8 @@ stdenv.mkDerivation rec {
                 
                 #cd ..
                 mkdir $out/openblas
+                ls
+                pwd
                 cp -r install/* $out/openblas/
 
                 cd ../../../src
