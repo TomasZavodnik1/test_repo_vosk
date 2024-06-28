@@ -1,7 +1,0 @@
-/root/tii/29_5_2024/test_repo_vosk/vosk/kaldi/vosk-api-0.3.50/CMakeFiles/vosk.dir
-/root/tii/29_5_2024/test_repo_vosk/vosk/kaldi/vosk-api-0.3.50/CMakeFiles/edit_cache.dir
-/root/tii/29_5_2024/test_repo_vosk/vosk/kaldi/vosk-api-0.3.50/CMakeFiles/rebuild_cache.dir
-/root/tii/29_5_2024/test_repo_vosk/vosk/kaldi/vosk-api-0.3.50/CMakeFiles/list_install_components.dir
-/root/tii/29_5_2024/test_repo_vosk/vosk/kaldi/vosk-api-0.3.50/CMakeFiles/install.dir
-/root/tii/29_5_2024/test_repo_vosk/vosk/kaldi/vosk-api-0.3.50/CMakeFiles/install/local.dir
-/root/tii/29_5_2024/test_repo_vosk/vosk/kaldi/vosk-api-0.3.50/CMakeFiles/install/strip.dir

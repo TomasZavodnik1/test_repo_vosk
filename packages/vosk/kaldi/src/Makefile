@@ -2,7 +2,7 @@
 # Also see kaldi.mk which supplies options and some rules
 # used by the Makefiles in the subdirectories.
 
-SHELL := ${pkgs.bash}/bin/bash
+SHELL :=  ${pkgs.bash}/bin/bash
 
 # Please keep sorted alphabetically, and start each with a letter which
 # is different from the first one in the last word one the row above it.

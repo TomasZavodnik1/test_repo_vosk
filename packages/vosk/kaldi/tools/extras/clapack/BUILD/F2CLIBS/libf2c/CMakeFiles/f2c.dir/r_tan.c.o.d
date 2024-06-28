@@ -1,0 +1,26 @@
+F2CLIBS/libf2c/CMakeFiles/f2c.dir/r_tan.c.o: \
+ /root/tii/test_repo_vosk/packages/vosk/kaldi/tools/extras/clapack/F2CLIBS/libf2c/r_tan.c \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/stdc-predef.h \
+ /root/tii/test_repo_vosk/packages/vosk/kaldi/tools/extras/clapack/F2CLIBS/libf2c/f2c.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/math.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/libc-header-start.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/features.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/features-time64.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/wordsize.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/timesize.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/sys/cdefs.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/long-double.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/gnu/stubs.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/gnu/stubs-64.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/types.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/typesizes.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/time64.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/math-vector.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/libm-simd-decl-stubs.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/floatn.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/floatn-common.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/flt-eval-method.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/fp-logb.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/fp-fast.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/mathcalls-helper-functions.h \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/bits/mathcalls.h

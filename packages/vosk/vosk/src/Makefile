@@ -1,7 +1,7 @@
 # Locations of the dependencies
 KALDI_ROOT?=$(HOME)/travis/kaldi
 OPENFST_ROOT?=$(KALDI_ROOT)/tools/openfst
-OPENBLAS_ROOT?=$(KALDI_ROOT)/tools/OpenBLAS/install
+OPENBLAS_ROOT?=$(KALDI_ROOT)/tools/extras/OpenBLAS/install
 MKL_ROOT?=/opt/intel/mkl
 CUDA_ROOT?=/usr/local/cuda
 USE_SHARED?=0
@@ -40,23 +40,23 @@ LDFLAGS=
 
 ifeq ($(USE_SHARED), 0)
     LIBS = \
-        $(KALDI_ROOT)/src/online2/kaldi-online2.a \
-        $(KALDI_ROOT)/src/decoder/kaldi-decoder.a \
-        $(KALDI_ROOT)/src/ivector/kaldi-ivector.a \
-        $(KALDI_ROOT)/src/gmm/kaldi-gmm.a \
-        $(KALDI_ROOT)/src/tree/kaldi-tree.a \
-        $(KALDI_ROOT)/src/feat/kaldi-feat.a \
-        $(KALDI_ROOT)/src/lat/kaldi-lat.a \
-        $(KALDI_ROOT)/src/lm/kaldi-lm.a \
-        $(KALDI_ROOT)/src/rnnlm/kaldi-rnnlm.a \
-        $(KALDI_ROOT)/src/hmm/kaldi-hmm.a \
-        $(KALDI_ROOT)/src/nnet3/kaldi-nnet3.a \
-        $(KALDI_ROOT)/src/transform/kaldi-transform.a \
-        $(KALDI_ROOT)/src/cudamatrix/kaldi-cudamatrix.a \
-        $(KALDI_ROOT)/src/matrix/kaldi-matrix.a \
-        $(KALDI_ROOT)/src/fstext/kaldi-fstext.a \
-        $(KALDI_ROOT)/src/util/kaldi-util.a \
-        $(KALDI_ROOT)/src/base/kaldi-base.a \
+        $(KALDI_ROOT)/libkaldi-online2.a \
+        $(KALDI_ROOT)/libkaldi-decoder.a \
+        $(KALDI_ROOT)/libkaldi-ivector.a \
+        $(KALDI_ROOT)/libkaldi-gmm.a \
+        $(KALDI_ROOT)/libkaldi-tree.a \
+        $(KALDI_ROOT)/libkaldi-feat.a \
+        $(KALDI_ROOT)/libkaldi-lat.a \
+        $(KALDI_ROOT)/libkaldi-lm.a \
+        $(KALDI_ROOT)/libkaldi-rnnlm.a \
+        $(KALDI_ROOT)/libkaldi-hmm.a \
+        $(KALDI_ROOT)/libkaldi-nnet3.a \
+        $(KALDI_ROOT)/libkaldi-transform.a \
+        $(KALDI_ROOT)/libkaldi-cudamatrix.a \
+        $(KALDI_ROOT)/libkaldi-matrix.a \
+        $(KALDI_ROOT)/libkaldi-fstext.a \
+        $(KALDI_ROOT)/libkaldi-util.a \
+        $(KALDI_ROOT)/libkaldi-base.a \
         $(OPENFST_ROOT)/lib/libfst.a \
         $(OPENFST_ROOT)/lib/libfstngram.a
 else

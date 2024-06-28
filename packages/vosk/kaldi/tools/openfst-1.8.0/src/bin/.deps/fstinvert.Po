@@ -1,0 +1,3 @@
+fstinvert.o: fstinvert.cc \
+ /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/stdc-predef.h
+/nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/stdc-predef.h:

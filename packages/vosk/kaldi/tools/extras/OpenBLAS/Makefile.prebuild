@@ -49,9 +49,9 @@ ifeq ($(TARGET), C910V)
 TARGET_FLAGS = -march=rv64gcvxthead -mabi=lp64v
 endif
 
-all: getarch_2nd
-	./getarch_2nd  0 >> $(TARGET_MAKE)
-	./getarch_2nd  1 >> $(TARGET_CONF)
+#all: getarch_2nd
+#	./getarch_2nd  0 >> $(TARGET_MAKE)
+#	./getarch_2nd  1 >> $(TARGET_CONF)
 
 config.h : c_check f_check getarch
 	perl ./c_check $(TARGET_MAKE) $(TARGET_CONF) $(CC) $(TARGET_FLAGS) $(CFLAGS)

@@ -1,0 +1,1 @@
+/nix/store/a9kr77jici5pfcv8hprqncnmjlsrjhi4-gcc-wrapper-12.3.0/bin/gcc -rdynamic CMakeFiles/xblat1c.dir/cblat1.c.o -o xblat1c  ../SRC/libblas.a -lm ../../F2CLIBS/libf2c/libf2c.a 
