@@ -44,16 +44,16 @@ stdenv.mkDerivation rec {
 
                 cd extras/OpenBLAS                
                 make - ONLY_CBLAS=1 DYNAMIC_ARCH=1 TARGET=ARMV8 USE_LOCKING=1 USE_THREAD=0 NUM_THREADS=512 all
-                mkdir -p $src/openblas_install
-                make PREFIX=$src/openblas_install install
-                #cd ../clapack
-                #mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t ../../OpenBLAS/install/lib
+                mkdir -p $out/openblas_install
+                make PREFIX=$out/openblas install
+                cd ../clapack
+                mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t $out/openblas/lib
                 
                 #cd ..
-                mkdir $out/openblas
-                ls
-                pwd
-                cp -r "$src/openblas_install/*" "$out/openblas/"
+                #mkdir $out/openblas
+                #ls
+                #pwd
+                #cp -r "$src/openblas_install/*" "$out/openblas/"
 
                 cd ../clapack
                 mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t ../../OpenBLAS/install/lib
