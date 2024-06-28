@@ -48,17 +48,6 @@ stdenv.mkDerivation rec {
                 make PREFIX=$out/openblas install
                 cd ../clapack
                 mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t $out/openblas/lib
-                
-                #cd ..
-                #mkdir $out/openblas
-                #ls
-                #pwd
-                #cp -r "$src/openblas_install/*" "$out/openblas/"
-
-                cd ../../clapack
-                mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t $out/openblas/lib
-
-
 
                 cd ../../../src
 	        
