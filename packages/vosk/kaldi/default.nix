@@ -44,6 +44,7 @@ stdenv.mkDerivation rec {
 
                 cd extras/OpenBLAS                
                 make - ONLY_CBLAS=1 DYNAMIC_ARCH=1 TARGET=ARMV8 USE_LOCKING=1 USE_THREAD=0 NUM_THREADS=512 all
+                mkdir -p $src/openblas_install
                 make PREFIX=$src/openblas_install install
                 #cd ../clapack
                 #mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t ../../OpenBLAS/install/lib
