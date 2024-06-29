@@ -58,7 +58,7 @@ stdenv.mkDerivation rec {
                 sh configure --openblas-root=$out/openblas --static --fst-root=$out/openfst --fst-version=1.8.0
                 make -j 10 online2 lm rnnlm
                '';
- installPhase = '' mkdir $out
+ installPhase = '' #mkdir $out
                    mkdir $out/kaldi
                    
                    mkdir $out/kaldi/lib
@@ -68,10 +68,10 @@ stdenv.mkDerivation rec {
                    cp src/* $out/kaldi/include
                    find src/ -name "*.a" -exec mv {} $out/kaldi/lib/ \;
                    
-                   cp tools/openfst/lib/* $out/openfst/lib
-                   cp tools/openfst/include/* $out/openfst/include
+                   #cp tools/openfst/lib/* $out/openfst/lib
+                   #cp tools/openfst/include/* $out/openfst/include
 
-                   cp -r tools/extras/OpenBLAS/install/* $out/openblas/
+                   #cp -r tools/extras/OpenBLAS/install/* $out/openblas/
 
                    #cp -r ../tools/openfst/* $out/include/openfst_src
                    #cp -r ../tools/extras/OpenBLAS/install/* $out/include/openblas_src
