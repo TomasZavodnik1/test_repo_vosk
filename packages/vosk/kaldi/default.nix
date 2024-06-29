@@ -65,7 +65,7 @@ stdenv.mkDerivation rec {
                    mkdir $out/kaldi/include
 
                    cd ..
-                   cp src/* $out/kaldi/include
+                   cp -r src/* $out/kaldi/include
                    find src/ -name "*.a" -exec mv {} $out/kaldi/lib/ \;
                    
                    #cp tools/openfst/lib/* $out/openfst/lib
