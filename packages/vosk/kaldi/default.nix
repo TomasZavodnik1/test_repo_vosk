@@ -49,7 +49,7 @@ stdenv.mkDerivation rec {
                 cd ../clapack
                 mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t $out/openblas/lib
                 pwd
-                cd ../../../src
+                cd ../../../../src
 	        
                 patchShebangs .
                 substituteInPlace Makefile --replace /bin/bash ${pkgs.bash}/bin/bash
