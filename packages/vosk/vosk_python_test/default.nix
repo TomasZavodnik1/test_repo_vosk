@@ -1,12 +1,12 @@
 #{ lib, python311Packages, pkgs }:
 { pkgs ? import <nixpkgs> {} }:
-with pkgs.python39Packages;
-buildPythonApplication {
+
+pkgs.python39PackagesbuildPythonApplication {
   pname = "vosk-python-test";
   version = "1.0";
-
-  nativeBuildInputs = [ (callPackage ../vosk_python {}) cffi requests tqdm srt websockets ];
-  buildInputs = [ (callPackage ../vosk_python {}) cffi requests tqdm srt websockets ];
+  
+  nativeBuildInputs = [ (pkgs.callPackage ../vosk_python {}) pkgs.python39Packages.pkgs.cffi pkgs.python39Packages.pkgs.requests pkgs.python39Packages.pkgs.tqdm pkgs.python39Packages.pkgs.srt pkgs.python39Packages.pkgs.websockets ];
+  buildInputs = [ (pkgs.callPackage ../vosk_python {}) pkgs.python39Packages.pkgs.cffi pkgs.python39Packages.pkgs.requests pkgs.python39Packages.pkgs.tqdm pkgs.python39Packages.pkgs.srt pkgs.python39Packages.pkgs.websockets ];
   src = ./.;
 
 
