@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
   pname = "vosk";
   version = "v0.3.50";
   src = ./.;
-  buildInputs = [  ];
+  buildInputs = [ ( callPackage ../kaldi-openfst-openblas {} ) ];
   nativeBuildInputs =  [ ];
   dontUseCmakeConfigure=true;
   doCheck=false;
@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
   buildPhase = ''
                 #tar -xvf source.tar
                 cd src
-                #ls ${kaldi}/bin
+                ls ${kaldi-openfst-openblas}
                 #ls ${kaldi}/lib
                 ls /nix/store
                 pwd
