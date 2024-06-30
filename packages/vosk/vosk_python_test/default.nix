@@ -1,12 +1,12 @@
 #{ lib, python311Packages, pkgs }:
 { pkgs ? import <nixpkgs> {} }:
 
-pkgs.python39Packages.buildPythonApplication {
+pkgs.python311Packages.buildPythonApplication {
   pname = "vosk-python-test";
   version = "1.0";
   
-  nativeBuildInputs = [ (pkgs.callPackage ../vosk_python {}) pkgs.python39Packages.pkgs.cffi pkgs.python39Packages.pkgs.requests pkgs.python39Packages.pkgs.tqdm pkgs.python39Packages.pkgs.srt pkgs.python39Packages.pkgs.websockets ];
-  buildInputs = [ (pkgs.callPackage ../vosk_python {}) pkgs.python39Packages.pkgs.cffi pkgs.python39Packages.pkgs.requests pkgs.python39Packages.pkgs.tqdm pkgs.python39Packages.pkgs.srt pkgs.python39Packages.pkgs.websockets ];
+  nativeBuildInputs = [ (pkgs.callPackage ../vosk_python {}) pkgs.python311Packages.pkgs.cffi pkgs.python311Packages.pkgs.requests pkgs.python311Packages.pkgs.tqdm pkgs.python311Packages.pkgs.srt pkgs.python311Packages.pkgs.websockets ];
+  buildInputs = [ (pkgs.callPackage ../vosk_python {}) pkgs.python311Packages.pkgs.cffi pkgs.python311Packages.pkgs.requests pkgs.python311Packages.pkgs.tqdm pkgs.python311Packages.pkgs.srt pkgs.python311Packages.pkgs.websockets ];
   src = ./.;
 
 
