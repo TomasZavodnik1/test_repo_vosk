@@ -29,7 +29,8 @@ stdenv.mkDerivation rec {
   buildPhase = ''
                 #tar -xvf source.tar
                 cd src
-                ls ${kaldi-openfst-openblas}
+                printenv
+                #ls ${kaldi-openfst-openblas}
                 #ls ${kaldi}/lib
                 ls /nix/store
                 pwd
