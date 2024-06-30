@@ -1,17 +1,17 @@
 #{ lib, python311Packages, pkgs }:
 { pkgs ? import <nixpkgs> {} }:
-with pkgs.python311Packages;
+
 let
-   vosk-pkg = callPackage ../vosk {};
+   vosk-pkg = pkgs.callPackage ../vosk {};
 in
-buildPythonPackage {
+pkgs.python311Packages.buildPythonPackage {
   pname = "vosk-python";
   version = "1.0";
   #phases = [ "unpackPhase" ];
   preBuild = ''  export VOSK_SOURCE=${vosk-pkg}  '';
 
-  nativeBuildInputs = [ vosk-pkg cffi requests tqdm srt websockets srt zipfile2 pyzipper ];
-  buildInputs = [ vosk-pkg cffi requests tqdm srt websockets srt zipfile2 pyzipper ];
+  nativeBuildInputs = [ vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper ];
+  buildInputs = [ vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper  ];
   src = ./.;
   
   postFixup='' ls ${vosk-pkg}/src/ 
