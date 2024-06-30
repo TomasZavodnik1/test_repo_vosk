@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
   buildPhase = ''
                 #tar -xvf source.tar
                 cd tools/openfst/
-                sh configure --enable-static
+                sh configure --enable-static --enable-ngram-fsts --enable-ngram-python
                 make
                 mkdir $out
                 mkdir $out/openfst
