@@ -10,7 +10,7 @@ buildPythonPackage {
   #phases = [ "unpackPhase" ];
   preBuild = ''  export VOSK_SOURCE=${vosk-pkg}  '';
 
-  nativeBuildInputs = [ vosk-pkg cffi requests tqdm srt websockets ];
-  buildInputs = [ vosk-pkg cffi requests tqdm srt websockets ];
+  nativeBuildInputs = [ vosk-pkg cffi requests tqdm srt websockets srt zipfile ];
+  buildInputs = [ vosk-pkg cffi requests tqdm srt websockets srt zipfile ];
   src = ./.;
 }

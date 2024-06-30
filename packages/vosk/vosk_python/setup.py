@@ -7,6 +7,8 @@ import platform
 # Figure out environment for cross-compile
 vosk_source = os.getenv("VOSK_SOURCE", os.path.abspath(os.path.join(os.path.dirname(__file__),
     "..")))
+print( "{0}".format( vosk_source ) )
+qweqe
 system = os.environ.get('VOSK_SYSTEM', platform.system())
 architecture = os.environ.get('VOSK_ARCHITECTURE', platform.architecture()[0])
 machine = os.environ.get('VOSK_MACHINE', platform.machine())
@@ -55,7 +57,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     package_data = {'vosk': ['*.so', '*.dll', '*.dyld']},
     entry_points = {
-        'console_scripts': ['vosk-transcriber=vosk.transcriber.cli:main'],
+        'console_scripts': ['vosk-=vosk.transcriber.cli:main'],
     },
     include_package_data=True,
     classifiers=[
