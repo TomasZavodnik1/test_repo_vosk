@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
   buildPhase = ''
                 #tar -xvf source.tar
                 cd src
-                ls ${kaldi}/kaldi/include
+                ls ${kaldi}
                 KALDI_ROOT=${kaldi}/kaldi OPENFST_ROOT=${kaldi}/openfst OPENBLAS_ROOT=${kaldi}/openblas  make
                '';
  installPhase = '' mkdir $out
