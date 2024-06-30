@@ -12,8 +12,7 @@
  python39,
  python27,
  autoconf,
- binutils,
- libgcc
+ binutils
 }:
 
 
