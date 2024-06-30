@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
   pname = "vosk";
   version = "v0.3.50";
   src = ./.;
-  buildInputs = [ kaldi-pkg openblas libf2c ];
+  buildInputs = [ kaldi-pkg ];
   nativeBuildInputs =  [ ];
   dontUseCmakeConfigure=true;
   doCheck=false;
@@ -38,7 +38,7 @@ stdenv.mkDerivation rec {
                 #ls ${kaldi}/include
                 #ls ${kaldi}/share/kaldi/egs
                 #asdasdas
-                KALDI_ROOT=${kaldi-pkg}/kaldi OPENFST_ROOT=${kaldi-pkg}/openfst OPENBLAS_ROOT=${openblas}  make
+                KALDI_ROOT=${kaldi-pkg}/kaldi OPENFST_ROOT=${kaldi-pkg}/openfst OPENBLAS_ROOT=${kaldi-pkg}/openblas  make
                '';
  installPhase = '' mkdir $out
                    mkdir $out/vosk
