@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
                 #tar -xvf source.tar
                 cd src
                 printenv
-                #ls ${kaldi-openfst-openblas}
+                
                 #ls ${kaldi}/lib
                 ls /nix/store
                 pwd
