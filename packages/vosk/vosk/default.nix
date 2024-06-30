@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
                 cd src
                 printenv
                 
-                #ls ${kaldi}/lib
+                ls ${kaldi-openfst-openblas}/lib
                 ls /nix/store
                 pwd
                 
