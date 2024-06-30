@@ -8,7 +8,7 @@ import platform
 vosk_source = os.getenv("VOSK_SOURCE", os.path.abspath(os.path.join(os.path.dirname(__file__),
     "..")))
 print( "{0}".format( vosk_source ) )
-qweqe
+
 system = os.environ.get('VOSK_SYSTEM', platform.system())
 architecture = os.environ.get('VOSK_ARCHITECTURE', platform.architecture()[0])
 machine = os.environ.get('VOSK_MACHINE', platform.machine())
