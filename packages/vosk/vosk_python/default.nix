@@ -15,6 +15,5 @@ pkgs.python311Packages.buildPythonPackage {
   src = ./.;
   
   postFixup='' ls ${vosk-pkg}/src/ 
-               mdkir -p $out/lib/python3.9/site-packages/vosk
-               cp ${vosk-pkg}/src/libvosk.so $out/lib/python3.9/site-packages/vosk '';
+               cp ${vosk-pkg}/src/libvosk.so $out/lib/python3.11/site-packages/vosk '';
 }
