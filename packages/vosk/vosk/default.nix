@@ -15,13 +15,17 @@
  binutils,
  libgcc
 }:
-#with import <nixpkgs> {};
+
+
 with pkgs;
+let
+  kaldi = callPackage ../kaldi-openfst-openblas {};
+in
 stdenv.mkDerivation rec {
   pname = "vosk";
   version = "v0.3.50";
   src = ./.;
-  buildInputs = [ (callPackage ../kaldi-openfst-openblas {}) ];
+  buildInputs = [ kaldi ];
   nativeBuildInputs =  [ ];
   dontUseCmakeConfigure=true;
   doCheck=false;
