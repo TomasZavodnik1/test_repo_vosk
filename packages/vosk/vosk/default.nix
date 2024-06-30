@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
   pname = "vosk";
   version = "v0.3.50";
   src = ./.;
-  buildInputs = [ kaldi-pkg openblas ];
+  buildInputs = [ kaldi-pkg openblas libf2c ];
   nativeBuildInputs =  [ ];
   dontUseCmakeConfigure=true;
   doCheck=false;
