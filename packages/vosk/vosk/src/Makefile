@@ -57,7 +57,7 @@ ifeq ($(USE_SHARED), 0)
         $(KALDI_ROOT)/lib/kaldi-matrix.a \
         $(KALDI_ROOT)/lib/kaldi-fstext.a \
         $(KALDI_ROOT)/lib/kaldi-util.a \
-        $(KALDI_ROOT)/kaldi-base.a \
+        $(KALDI_ROOT)/lib/kaldi-base.a \
         $(OPENFST_ROOT)/lib/libfst.a \
         $(OPENFST_ROOT)/lib/libfstngram.a
 else
