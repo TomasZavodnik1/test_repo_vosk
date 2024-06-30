@@ -44,6 +44,7 @@ stdenv.mkDerivation rec {
                    mkdir $out/vosk
                    
                    find ${src} -name "*.a" -exec mv {} $out/vosk/ \;
+                   
 	'';
 }
 

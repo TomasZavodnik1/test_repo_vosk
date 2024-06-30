@@ -8,7 +8,7 @@
   ...
 }: let
   cfg = config.vosk;
-  vosk-pkg = pkgs.callPackage ./vosk {};
+  vosk-pkg = pkgs.callPackage ./vosk_python {};
 in
    with lib; {
     options.vosk = {
