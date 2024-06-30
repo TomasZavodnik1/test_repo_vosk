@@ -35,7 +35,7 @@ stdenv.mkDerivation rec {
                 cd src
                 
                 #ls /nix/store
-                find ${kaldi-pkg}/openfst -name "*libfstngram*"
+                find ${kaldi-pkg} -name "*fstngram*"
                                 
                 ls -la ${kaldi-pkg}/kaldi/lib
                 #ls ${kaldi}/include
