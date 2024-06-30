@@ -1,0 +1,232 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake:211 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 6.1.91 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineFortranCompiler.cmake:179 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the Fortran compiler identification source file "CMakeFortranCompilerId.F" failed.
+      Compiler: /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran 
+      Build flags: 
+      Id flags: -v 
+      
+      The output was:
+      1
+      Driving: /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran -v CMakeFortranCompilerId.F -lgfortran -lm -shared-libgcc
+      Using built-in specs.
+      COLLECT_GCC=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran
+      COLLECT_LTO_WRAPPER=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/lto-wrapper
+      Target: x86_64-unknown-linux-gnu
+      Configured with: ../gcc-12.3.0/configure --prefix=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gfortran-12.3.0 --with-gmp-include=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gmp-6.3.0-dev/include --with-gmp-lib=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gmp-6.3.0/lib --with-mpfr-include=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-mpfr-4.2.1-dev/include --with-mpfr-lib=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-mpfr-4.2.1/lib --with-mpc=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-libmpc-1.3.1 --with-native-system-header-dir=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-glibc-2.38-66-dev/include --with-build-sysroot=/ --program-prefix= --enable-lto --disable-libstdcxx-pch --without-included-gettext --with-system-zlib --enable-static --enable-languages=fortran --disable-multilib --enable-plugin --disable-libcc1 --with-isl=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-isl-0.20 --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --target=x86_64-unknown-linux-gnu
+      Thread model: posix
+      Supported LTO compression algorithms: zlib
+      gcc version 12.3.0 (GCC) 
+      COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a-'
+       /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/f951 CMakeFortranCompilerId.F -ffixed-form -cpp=/tmp/ccdASTgk.f90 -quiet -v CMakeFortranCompilerId.F -quiet -dumpdir a- -dumpbase CMakeFortranCompilerId.F -dumpbase-ext .F -mtune=generic -march=x86-64 -version -fintrinsic-modules-path /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/finclude -fpre-include=/nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/finclude/math-vector-fortran.h -o /tmp/ccFZfoX3.s
+      GNU Fortran (GCC) version 12.3.0 (x86_64-unknown-linux-gnu)
+      	compiled by GNU C version 12.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.20-GMP
+      
+      GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+      ignoring nonexistent directory "/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../../x86_64-unknown-linux-gnu/include"
+      #include "..." search starts here:
+      #include <...> search starts here:
+       /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/finclude
+       /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/include
+       /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/include
+       /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/include-fixed
+       /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include
+      End of search list.
+      GNU Fortran2008 (GCC) version 12.3.0 (x86_64-unknown-linux-gnu)
+      	compiled by GNU C version 12.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.20-GMP
+      
+      GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+      COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a-'
+       as -v --64 -o /tmp/ccR5cs1K.o /tmp/ccFZfoX3.s
+      GNU assembler version 2.40 (x86_64-unknown-linux-gnu) using BFD version (GNU Binutils) 2.40
+      Reading specs from /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../../lib64/libgfortran.spec
+      rename spec lib to liborig
+      COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a-'
+      COMPILER_PATH=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/
+      LIBRARY_PATH=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../../lib64/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../
+      COLLECT_GCC_OPTIONS='-v' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'a.'
+       /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/collect2 -plugin /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXuZjWK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /nix/store/p9ysh5rk109gyjj3cn6jr54znvvlahfl-glibc-2.38-66/lib64/ld-linux-x86-64.so.2 crt1.o crti.o /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/crtbegin.o -L/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0 -L/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../../lib64 -L/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../.. /tmp/ccR5cs1K.o -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/crtend.o crtn.o
+      /nix/store/01bi48ga8vzbz4zgh7g3bsl620cj27kj-binutils-2.40/bin/ld: cannot find crt1.o: No such file or directory
+      /nix/store/01bi48ga8vzbz4zgh7g3bsl620cj27kj-binutils-2.40/bin/ld: cannot find crti.o: No such file or directory
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineFortranCompiler.cmake:179 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the Fortran compiler identification source file "CMakeFortranCompilerId.F" failed.
+      Compiler: /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /nix/store/01bi48ga8vzbz4zgh7g3bsl620cj27kj-binutils-2.40/bin/ld: cannot find crt1.o: No such file or directory
+      /nix/store/01bi48ga8vzbz4zgh7g3bsl620cj27kj-binutils-2.40/bin/ld: cannot find crti.o: No such file or directory
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineFortranCompiler.cmake:179 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the Fortran compiler identification source file "CMakeFortranCompilerId.F" succeeded.
+      Compiler: /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the Fortran compiler identification source "CMakeFortranCompilerId.F" produced "CMakeFortranCompilerId.o"
+      
+      The Fortran compiler identification is GNU, found in:
+        /root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/3.27.7/CompilerIdFortran/CMakeFortranCompilerId.o
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeTestFortranCompiler.cmake:20 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting Fortran compiler ABI info"
+    directories:
+      source: "/root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-ZM3H8h"
+      binary: "/root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-ZM3H8h"
+    cmakeVariables:
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_Fortran_FLAGS: ""
+      CMAKE_Fortran_FLAGS_DEBUG: "-g"
+    buildResult:
+      variable: "CMAKE_Fortran_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-ZM3H8h'
+        
+        Run Build Command(s): /nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/bin/cmake -E env VERBOSE=1 /nix/store/z7mzccnisx6jp2q535wq2rs7ndrvw15i-gnumake-4.4.1/bin/make -f Makefile cmTC_11d11/fast
+        /nix/store/z7mzccnisx6jp2q535wq2rs7ndrvw15i-gnumake-4.4.1/bin/make  -f CMakeFiles/cmTC_11d11.dir/build.make CMakeFiles/cmTC_11d11.dir/build
+        make[1]: Entering directory '/root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-ZM3H8h'
+        Building Fortran object CMakeFiles/cmTC_11d11.dir/CMakeFortranCompilerABI.F90.o
+        /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran   -v -c /nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeFortranCompilerABI.F90 -o CMakeFiles/cmTC_11d11.dir/CMakeFortranCompilerABI.F90.o
+        Using built-in specs.
+        COLLECT_GCC=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran
+        Target: x86_64-unknown-linux-gnu
+        Configured with: ../gcc-12.3.0/configure --prefix=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gfortran-12.3.0 --with-gmp-include=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gmp-6.3.0-dev/include --with-gmp-lib=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gmp-6.3.0/lib --with-mpfr-include=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-mpfr-4.2.1-dev/include --with-mpfr-lib=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-mpfr-4.2.1/lib --with-mpc=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-libmpc-1.3.1 --with-native-system-header-dir=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-glibc-2.38-66-dev/include --with-build-sysroot=/ --program-prefix= --enable-lto --disable-libstdcxx-pch --without-included-gettext --with-system-zlib --enable-static --enable-languages=fortran --disable-multilib --enable-plugin --disable-libcc1 --with-isl=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-isl-0.20 --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --target=x86_64-unknown-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 12.3.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_11d11.dir/CMakeFortranCompilerABI.F90.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_11d11.dir/'
+         /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/f951 /nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeFortranCompilerABI.F90 -cpp=/tmp/cce8E1rj.f90 -quiet -v /nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeFortranCompilerABI.F90 -quiet -dumpdir CMakeFiles/cmTC_11d11.dir/ -dumpbase CMakeFortranCompilerABI.F90.F90 -dumpbase-ext .F90 -mtune=generic -march=x86-64 -version -fintrinsic-modules-path /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/finclude -fpre-include=/nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include/finclude/math-vector-fortran.h -o /tmp/ccmOgExJ.s
+        GNU Fortran (GCC) version 12.3.0 (x86_64-unknown-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.20-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../../x86_64-unknown-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/finclude
+         /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/include
+         /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/include
+         /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/include-fixed
+         /nix/store/62pbcx7vqyjj4yg10cc16ywbzbvrdpsm-glibc-2.38-66-dev/include
+        End of search list.
+        GNU Fortran2008 (GCC) version 12.3.0 (x86_64-unknown-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.20-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_11d11.dir/CMakeFortranCompilerABI.F90.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_11d11.dir/'
+         as -v --64 -o CMakeFiles/cmTC_11d11.dir/CMakeFortranCompilerABI.F90.o /tmp/ccmOgExJ.s
+        GNU assembler version 2.40 (x86_64-unknown-linux-gnu) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/
+        LIBRARY_PATH=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../../lib64/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-c' '-o' 'CMakeFiles/cmTC_11d11.dir/CMakeFortranCompilerABI.F90.o' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_11d11.dir/CMakeFortranCompilerABI.F90.'
+        Linking Fortran executable cmTC_11d11
+        /nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11d11.dir/link.txt --verbose=1
+        /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran  -v CMakeFiles/cmTC_11d11.dir/CMakeFortranCompilerABI.F90.o -o cmTC_11d11 
+        Driving: /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran -v CMakeFiles/cmTC_11d11.dir/CMakeFortranCompilerABI.F90.o -o cmTC_11d11 -lgfortran -lm -shared-libgcc
+        Using built-in specs.
+        COLLECT_GCC=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran
+        COLLECT_LTO_WRAPPER=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/lto-wrapper
+        Target: x86_64-unknown-linux-gnu
+        Configured with: ../gcc-12.3.0/configure --prefix=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gfortran-12.3.0 --with-gmp-include=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gmp-6.3.0-dev/include --with-gmp-lib=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-gmp-6.3.0/lib --with-mpfr-include=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-mpfr-4.2.1-dev/include --with-mpfr-lib=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-mpfr-4.2.1/lib --with-mpc=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-libmpc-1.3.1 --with-native-system-header-dir=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-glibc-2.38-66-dev/include --with-build-sysroot=/ --program-prefix= --enable-lto --disable-libstdcxx-pch --without-included-gettext --with-system-zlib --enable-static --enable-languages=fortran --disable-multilib --enable-plugin --disable-libcc1 --with-isl=/nix/store/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee-isl-0.20 --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --target=x86_64-unknown-linux-gnu
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 12.3.0 (GCC) 
+        Reading specs from /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../../lib64/libgfortran.spec
+        rename spec lib to liborig
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_11d11' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_11d11-'
+        COMPILER_PATH=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/
+        LIBRARY_PATH=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../../lib64/:/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_11d11' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_11d11.'
+         /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/collect2 -plugin /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/libexec/gcc/x86_64-unknown-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbrsG7R.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf_x86_64 -dynamic-linker /nix/store/p9ysh5rk109gyjj3cn6jr54znvvlahfl-glibc-2.38-66/lib64/ld-linux-x86-64.so.2 -o cmTC_11d11 crt1.o crti.o /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/crtbegin.o -L/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0 -L/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../../../lib64 -L/nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_11d11.dir/CMakeFortranCompilerABI.F90.o -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/lib/gcc/x86_64-unknown-linux-gnu/12.3.0/crtend.o crtn.o
+        /nix/store/01bi48ga8vzbz4zgh7g3bsl620cj27kj-binutils-2.40/bin/ld: cannot find crt1.o: No such file or directory
+        /nix/store/01bi48ga8vzbz4zgh7g3bsl620cj27kj-binutils-2.40/bin/ld: cannot find crti.o: No such file or directory
+        collect2: error: ld returned 1 exit status
+        make[1]: *** [CMakeFiles/cmTC_11d11.dir/build.make:99: cmTC_11d11] Error 1
+        make[1]: Leaving directory '/root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-ZM3H8h'
+        make: *** [Makefile:127: cmTC_11d11/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/share/cmake-3.27/Modules/CMakeTestFortranCompiler.cmake:49 (try_compile)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Check for working Fortran compiler: /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran"
+    directories:
+      source: "/root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-PS1SHQ"
+      binary: "/root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-PS1SHQ"
+    cmakeVariables:
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_Fortran_FLAGS: ""
+      CMAKE_Fortran_FLAGS_DEBUG: "-g"
+    buildResult:
+      variable: "CMAKE_Fortran_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-PS1SHQ'
+        
+        Run Build Command(s): /nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/bin/cmake -E env VERBOSE=1 /nix/store/z7mzccnisx6jp2q535wq2rs7ndrvw15i-gnumake-4.4.1/bin/make -f Makefile cmTC_a552a/fast
+        /nix/store/z7mzccnisx6jp2q535wq2rs7ndrvw15i-gnumake-4.4.1/bin/make  -f CMakeFiles/cmTC_a552a.dir/build.make CMakeFiles/cmTC_a552a.dir/build
+        make[1]: Entering directory '/root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-PS1SHQ'
+        Building Fortran object CMakeFiles/cmTC_a552a.dir/testFortranCompiler.f.o
+        /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran    -c /root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-PS1SHQ/testFortranCompiler.f -o CMakeFiles/cmTC_a552a.dir/testFortranCompiler.f.o
+        Linking Fortran executable cmTC_a552a
+        /nix/store/g84xzgbaf74alskp78qcf7ia32yvxhi8-cmake-3.27.7/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a552a.dir/link.txt --verbose=1
+        /nix/store/8hakrs12dkdmcfbg9650pmxg80mb2m7q-gfortran-12.3.0/bin/gfortran CMakeFiles/cmTC_a552a.dir/testFortranCompiler.f.o -o cmTC_a552a 
+        /nix/store/01bi48ga8vzbz4zgh7g3bsl620cj27kj-binutils-2.40/bin/ld: cannot find crt1.o: No such file or directory
+        /nix/store/01bi48ga8vzbz4zgh7g3bsl620cj27kj-binutils-2.40/bin/ld: cannot find crti.o: No such file or directory
+        collect2: error: ld returned 1 exit status
+        make[1]: *** [CMakeFiles/cmTC_a552a.dir/build.make:99: cmTC_a552a] Error 1
+        make[1]: Leaving directory '/root/tii/test_repo_vosk/packages/vosk/kaldi-openfst-openblas/tools/extras/OpenBLAS/BUILD/CMakeFiles/CheckFortran/CMakeFiles/CMakeScratch/TryCompile-PS1SHQ'
+        make: *** [Makefile:127: cmTC_a552a/fast] Error 2
+        
+      exitCode: 2
+...
