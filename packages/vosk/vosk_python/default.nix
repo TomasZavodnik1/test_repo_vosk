@@ -1,6 +1,6 @@
 #{ lib, python311Packages, pkgs }:
 { pkgs ? import <nixpkgs> {} }:
-with pkgs.python311Packages;
+with pkgs.python39Packages;
 let
    vosk-pkg = callPackage ../vosk {};
 in
@@ -13,4 +13,7 @@ buildPythonPackage {
   nativeBuildInputs = [ vosk-pkg cffi requests tqdm srt websockets srt zipfile2 pyzipper ];
   buildInputs = [ vosk-pkg cffi requests tqdm srt websockets srt zipfile2 pyzipper ];
   src = ./.;
+  
+  postFixup='' ls ${vosk-pkg}/ 
+               cp ${vosk-pkg}/libvosk.so $out/lib/python3.9/site-packages/vosk '';
 }

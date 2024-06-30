@@ -29,9 +29,9 @@ stdenv.mkDerivation rec {
                '';
  installPhase = '' #create output dir
                    mkdir -p $out/lib
-           
+                   cp vosk_api.h $out
                    #copy created libs to output directory
-                   find ../ -name "*.so" -exec mv {} $out/lib/ \;
+                   find ../ -name "*.so" -exec mv {} $out/ \;
 	'';
 }
 
