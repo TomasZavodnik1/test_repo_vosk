@@ -2,8 +2,6 @@
 # SPDX-License-Identifier: Apache-2.0
 {
  pkgs,
- gcc,
- glibc,
  gnumake,
  cmake,
  gfortran,
@@ -11,8 +9,7 @@
  bash,
  python39,
  python27,
- autoconf,
- binutils
+ autoconf
 }:
 
 
