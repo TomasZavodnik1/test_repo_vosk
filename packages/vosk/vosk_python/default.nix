@@ -2,7 +2,7 @@
 { pkgs ? import <nixpkgs> {} }:
 with pkgs.python311Packages;
 let
-   vosk-pkg = callPackage ../vosk {}
+   vosk-pkg = callPackage ../vosk {};
 in
 buildPythonPackage {
   pname = "vosk-python";
