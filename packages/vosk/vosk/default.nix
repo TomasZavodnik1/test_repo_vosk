@@ -39,16 +39,16 @@ stdenv.mkDerivation rec {
                 #ls ${kaldi}/share/kaldi/egs
                 #asdasdas
                 KALDI_ROOT=${kaldi-pkg}/kaldi OPENFST_ROOT=${kaldi-pkg}/openfst OPENBLAS_ROOT=${kaldi-pkg}/openblas  make
-                find ../ -name "*.so"
-                sdasdasds
                '';
  installPhase = '' mkdir $out
                    mkdir $out/lib
-                   find ${src} -name "*.a"
-                   find ${src} -name "*.so"
-                   sdadadasd
-                   find ${src} -name "*.a" -exec mv {} $out/lib/ \;
-                   find ${src} -name "*.so" -exec mv {} $out/lib/ \;
+                   find ../ -name "*.a"
+                   find ../ -name "*.so"
+           
+                   find ../ -name "*.a" -exec mv {} $out/lib/ \;
+                   find ../ -name "*.so" -exec mv {} $out/lib/ \;
+                   find $out/ -name "*.so"
+                   saasd
 	'';
 }
 
