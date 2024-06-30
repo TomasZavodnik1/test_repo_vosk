@@ -37,7 +37,7 @@ stdenv.mkDerivation rec {
                 #ls /nix/store
                 find ${kaldi-pkg} -name "*openblas.a"
                                 
-                #ls -la ${kaldi-pkg}/openfst/lib
+                ls -la ${kaldi-pkg}/openblas/lib
                 
                 #ls ${kaldi}/include
                 #ls ${kaldi}/share/kaldi/egs
