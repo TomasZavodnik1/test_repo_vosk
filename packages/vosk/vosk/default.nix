@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
                 cd src
                 #ls ${kaldi}/bin
                 #ls ${kaldi}/lib
-                cd ${kaldi}
+                ls /nix/store
                 pwd
                 
                 #ls ${kaldi}/share
