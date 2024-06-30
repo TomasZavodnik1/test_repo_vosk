@@ -33,7 +33,6 @@ stdenv.mkDerivation rec {
   buildPhase = ''
                 #tar -xvf source.tar
                 cd src
-                find / -name "openblas"
                 
                 #ls /nix/store
                 pwd
@@ -41,7 +40,7 @@ stdenv.mkDerivation rec {
                 ls ${kaldi-pkg}
                 #ls ${kaldi}/include
                 #ls ${kaldi}/share/kaldi/egs
-                KALDI_ROOT=${kaldi}/kaldi OPENFST_ROOT=${kaldi}/openfst OPENBLAS_ROOT=${kaldi}/openblas  make
+                KALDI_ROOT=${kaldi-pkg}/kaldi OPENFST_ROOT=${kaldi-pkg}/openfst OPENBLAS_ROOT=${kaldi-pkg}/openblas  make
                '';
  installPhase = '' mkdir $out
                    mkdir $out/vosk
