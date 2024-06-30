@@ -8,8 +8,7 @@ buildPythonPackage {
   pname = "vosk-python";
   version = "1.0";
   #phases = [ "unpackPhase" ];
-  preBuild = ''  export VOSK_SOURCE=${vosk-pkg} 
-                 sadasdasdads '';
+  preBuild = ''  export VOSK_SOURCE=${vosk-pkg}  '';
 
   nativeBuildInputs = [ vosk-pkg cffi requests tqdm srt websockets ];
   buildInputs = [ vosk-pkg cffi requests tqdm srt websockets ];
