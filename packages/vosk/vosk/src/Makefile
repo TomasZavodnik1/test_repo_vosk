@@ -41,23 +41,23 @@ LDFLAGS=
 
 ifeq ($(USE_SHARED), 0)
     LIBS = \
-        $(KALDI_ROOT)/lib/libkaldi-online2.a \
-        $(KALDI_ROOT)/lib/libkaldi-decoder.a \
-        $(KALDI_ROOT)/lib/libkaldi-ivector.a \
-        $(KALDI_ROOT)/lib/libkaldi-gmm.a \
-        $(KALDI_ROOT)/lib/libkaldi-tree.a \
-        $(KALDI_ROOT)/lib/libkaldi-feat.a \
-        $(KALDI_ROOT)/lib/libkaldi-lat.a \
-        $(KALDI_ROOT)/lib/libkaldi-lm.a \
-        $(KALDI_ROOT)/lib/libkaldi-rnnlm.a \
-        $(KALDI_ROOT)/lib/libkaldi-hmm.a \
-        $(KALDI_ROOT)/lib/libkaldi-nnet3.a \
-        $(KALDI_ROOT)/lib/libkaldi-transform.a \
-        $(KALDI_ROOT)/lib/libkaldi-cudamatrix.a \
-        $(KALDI_ROOT)/lib/libkaldi-matrix.a \
-        $(KALDI_ROOT)/lib/libkaldi-fstext.a \
-        $(KALDI_ROOT)/lib/libkaldi-util.a \
-        $(KALDI_ROOT)/libkaldi-base.a \
+        $(KALDI_ROOT)/lib/kaldi-online2.a \
+        $(KALDI_ROOT)/lib/kaldi-decoder.a \
+        $(KALDI_ROOT)/lib/kaldi-ivector.a \
+        $(KALDI_ROOT)/lib/kaldi-gmm.a \
+        $(KALDI_ROOT)/lib/kaldi-tree.a \
+        $(KALDI_ROOT)/lib/kaldi-feat.a \
+        $(KALDI_ROOT)/lib/kaldi-lat.a \
+        $(KALDI_ROOT)/lib/kaldi-lm.a \
+        $(KALDI_ROOT)/lib/kaldi-rnnlm.a \
+        $(KALDI_ROOT)/lib/kaldi-hmm.a \
+        $(KALDI_ROOT)/lib/kaldi-nnet3.a \
+        $(KALDI_ROOT)/lib/kaldi-transform.a \
+        $(KALDI_ROOT)/lib/kaldi-cudamatrix.a \
+        $(KALDI_ROOT)/lib/kaldi-matrix.a \
+        $(KALDI_ROOT)/lib/kaldi-fstext.a \
+        $(KALDI_ROOT)/lib/kaldi-util.a \
+        $(KALDI_ROOT)/kaldi-base.a \
         $(OPENFST_ROOT)/lib/libfst.a \
         $(OPENFST_ROOT)/lib/libfstngram.a
 else
