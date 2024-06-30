@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
   pname = "vosk";
   version = "v0.3.50";
   src = ./.;
-  buildInputs = [ ( callPackage ../kaldi{} )  gnumake pkgs.python39.pkgs.setuptools pkgs.python39.pkgs.cffi pkgs.python39.pkgs.requests pkgs.python39.pkgs.tqdm pkgs.python39.pkgs.srt pkgs.python39.pkgs.websockets  pkgs.python39.pkgs.setuptools coreutils bashInteractiveFHS dash bash  cmake  gfortran.cc perl bash python39 autoconf automake zlib unzip sox libtool ];
+  buildInputs = [   gnumake pkgs.python39.pkgs.setuptools pkgs.python39.pkgs.cffi pkgs.python39.pkgs.requests pkgs.python39.pkgs.tqdm pkgs.python39.pkgs.srt pkgs.python39.pkgs.websockets  pkgs.python39.pkgs.setuptools coreutils bashInteractiveFHS dash bash  cmake  gfortran.cc perl bash python39 autoconf automake zlib unzip sox libtool ];
   nativeBuildInputs =  [  pkgs.python39.pkgs.setuptools   autoreconfHook perl cmake gnumake binutils  bash ];
   dontUseCmakeConfigure=true;
   autoreconfPhase = ''  
