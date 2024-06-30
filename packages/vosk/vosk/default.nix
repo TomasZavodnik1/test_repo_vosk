@@ -41,10 +41,12 @@ stdenv.mkDerivation rec {
                 KALDI_ROOT=${kaldi-pkg}/kaldi OPENFST_ROOT=${kaldi-pkg}/openfst OPENBLAS_ROOT=${kaldi-pkg}/openblas  make
                '';
  installPhase = '' mkdir $out
-                   mkdir $out/vosk
-                   
-                   find ${src} -name "*.a" -exec mv {} $out/vosk/ \;
-                   
+                   mkdir $out/lib
+                   find ${src} -name "*.a"
+                   find ${src} -name "*.so"
+                   sdadadasd
+                   find ${src} -name "*.a" -exec mv {} $out/lib/ \;
+                   find ${src} -name "*.so" -exec mv {} $out/lib/ \;
 	'';
 }
 
