@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
                 #ls ${kaldi}/lib
                 ls ${kaldi}/share
                 #ls ${kaldi}/include
-                ls ${kaldi}/share/kaldi
+                ls ${kaldi}/share/kaldi/egs
                 KALDI_ROOT=${kaldi}/kaldi OPENFST_ROOT=${kaldi}/openfst OPENBLAS_ROOT=${kaldi}/openblas  make
                '';
  installPhase = '' mkdir $out
