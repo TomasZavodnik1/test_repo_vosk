@@ -8,7 +8,7 @@
   ...
 }: let
   cfg = config.vosk;
-  vosk-pkg = pkgs.callPackage ./kaldi {};
+  vosk-pkg = pkgs.callPackage ./vosk {};
 in
    with lib; {
     options.vosk = {

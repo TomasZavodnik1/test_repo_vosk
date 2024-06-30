@@ -1,7 +1,8 @@
 # Locations of the dependencies
-KALDI_ROOT?=$(HOME)/travis/kaldi
-OPENFST_ROOT?=$(KALDI_ROOT)/tools/openfst
-OPENBLAS_ROOT?=$(KALDI_ROOT)/tools/extras/OpenBLAS/install
+#KALDI_ROOT?=$(HOME)/travis/kaldi
+#OPENFST_ROOT?=$(KALDI_ROOT)/tools/openfst
+#OPENBLAS_ROOT?=$(KALDI_ROOT)/tools/extras/OpenBLAS/install
+
 MKL_ROOT?=/opt/intel/mkl
 CUDA_ROOT?=/usr/local/cuda
 USE_SHARED?=0
@@ -34,34 +35,34 @@ VOSK_HEADERS= \
 	vosk_api.h \
         postprocessor.h
 
-CFLAGS=-g -O3 -std=c++17 -Wno-deprecated-declarations -fPIC -DFST_NO_DYNAMIC_LINKING -I. -I$(KALDI_ROOT)/src -I$(OPENFST_ROOT)/include $(EXTRA_CFLAGS)
+CFLAGS=-g -O3 -std=c++17 -Wno-deprecated-declarations -fPIC -DFST_NO_DYNAMIC_LINKING -I. -I$(KALDI_ROOT)/include -I$(OPENFST_ROOT)/include $(EXTRA_CFLAGS)
 
 LDFLAGS=
 
 ifeq ($(USE_SHARED), 0)
     LIBS = \
-        $(KALDI_ROOT)/libkaldi-online2.a \
-        $(KALDI_ROOT)/libkaldi-decoder.a \
-        $(KALDI_ROOT)/libkaldi-ivector.a \
-        $(KALDI_ROOT)/libkaldi-gmm.a \
-        $(KALDI_ROOT)/libkaldi-tree.a \
-        $(KALDI_ROOT)/libkaldi-feat.a \
-        $(KALDI_ROOT)/libkaldi-lat.a \
-        $(KALDI_ROOT)/libkaldi-lm.a \
-        $(KALDI_ROOT)/libkaldi-rnnlm.a \
-        $(KALDI_ROOT)/libkaldi-hmm.a \
-        $(KALDI_ROOT)/libkaldi-nnet3.a \
-        $(KALDI_ROOT)/libkaldi-transform.a \
-        $(KALDI_ROOT)/libkaldi-cudamatrix.a \
-        $(KALDI_ROOT)/libkaldi-matrix.a \
-        $(KALDI_ROOT)/libkaldi-fstext.a \
-        $(KALDI_ROOT)/libkaldi-util.a \
+        $(KALDI_ROOT)/lib/libkaldi-online2.a \
+        $(KALDI_ROOT)/lib/libkaldi-decoder.a \
+        $(KALDI_ROOT)/lib/libkaldi-ivector.a \
+        $(KALDI_ROOT)/lib/libkaldi-gmm.a \
+        $(KALDI_ROOT)/lib/libkaldi-tree.a \
+        $(KALDI_ROOT)/lib/libkaldi-feat.a \
+        $(KALDI_ROOT)/lib/libkaldi-lat.a \
+        $(KALDI_ROOT)/lib/libkaldi-lm.a \
+        $(KALDI_ROOT)/lib/libkaldi-rnnlm.a \
+        $(KALDI_ROOT)/lib/libkaldi-hmm.a \
+        $(KALDI_ROOT)/lib/libkaldi-nnet3.a \
+        $(KALDI_ROOT)/lib/libkaldi-transform.a \
+        $(KALDI_ROOT)/lib/libkaldi-cudamatrix.a \
+        $(KALDI_ROOT)/lib/libkaldi-matrix.a \
+        $(KALDI_ROOT)/lib/libkaldi-fstext.a \
+        $(KALDI_ROOT)/lib/libkaldi-util.a \
         $(KALDI_ROOT)/libkaldi-base.a \
         $(OPENFST_ROOT)/lib/libfst.a \
         $(OPENFST_ROOT)/lib/libfstngram.a
 else
     LDFLAGS += \
-        -L$(KALDI_ROOT)/libs \
+        -L$(KALDI_ROOT)/lib \
         -lkaldi-online2 -lkaldi-decoder -lkaldi-ivector -lkaldi-gmm -lkaldi-tree \
         -lkaldi-feat -lkaldi-lat -lkaldi-lm -lkaldi-rnnlm -lkaldi-hmm -lkaldi-nnet3 \
         -lkaldi-transform -lkaldi-cudamatrix -lkaldi-matrix -lkaldi-fstext \
