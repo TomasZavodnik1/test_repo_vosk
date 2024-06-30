@@ -19,7 +19,7 @@
 
 with pkgs;
 let
-  kaldi = callPackage ../kaldi-openfst-openblas {};
+  kaldi-pkg = callPackage ../kaldi-openfst-openblas {};
 in
 stdenv.mkDerivation rec {
   pname = "vosk";
@@ -38,7 +38,7 @@ stdenv.mkDerivation rec {
                 #ls /nix/store
                 pwd
                 
-                ls ${kaldi-openfst-openblas}/share
+                ls ${kaldi-pkg}
                 #ls ${kaldi}/include
                 #ls ${kaldi}/share/kaldi/egs
                 KALDI_ROOT=${kaldi}/kaldi OPENFST_ROOT=${kaldi}/openfst OPENBLAS_ROOT=${kaldi}/openblas  make
