@@ -43,7 +43,7 @@ stdenv.mkDerivation rec {
  installPhase = '' mkdir $out
                    mkdir $out/vosk
                    
-                   find src/ -name "*.a" -exec mv {} $out/vosk/ \;
+                   find ${src} -name "*.a" -exec mv {} $out/vosk/ \;
 	'';
 }
 
