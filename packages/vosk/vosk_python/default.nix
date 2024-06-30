@@ -14,6 +14,6 @@ buildPythonPackage {
   buildInputs = [ vosk-pkg cffi requests tqdm srt websockets srt zipfile2 pyzipper ];
   src = ./.;
   
-  postFixup='' ls ${vosk-pkg}/ 
-               cp ${vosk-pkg}/libvosk.so $out/lib/python3.9/site-packages/vosk '';
+  postFixup='' ls ${vosk-pkg}/src/ 
+               cp ${vosk-pkg}/src/libvosk.so $out/lib/python3.9/site-packages/vosk '';
 }
