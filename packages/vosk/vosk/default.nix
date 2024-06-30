@@ -37,7 +37,7 @@ stdenv.mkDerivation rec {
                 #ls /nix/store
                 pwd
                 
-                ls ${kaldi-pkg}
+                ls -la ${kaldi-pkg}/lib
                 #ls ${kaldi}/include
                 #ls ${kaldi}/share/kaldi/egs
                 KALDI_ROOT=${kaldi-pkg}/kaldi OPENFST_ROOT=${kaldi-pkg}/openfst OPENBLAS_ROOT=${kaldi-pkg}/openblas  make
