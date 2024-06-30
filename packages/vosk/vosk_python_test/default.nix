@@ -1,7 +1,7 @@
 #{ lib, python311Packages, pkgs }:
 { pkgs ? import <nixpkgs> {} }:
 
-pkgs.python39PackagesbuildPythonApplication {
+pkgs.python39Packages.buildPythonApplication {
   pname = "vosk-python-test";
   version = "1.0";
   
