@@ -32,7 +32,10 @@ stdenv.mkDerivation rec {
   buildPhase = ''
                 #tar -xvf source.tar
                 cd src
-                ls ${kaldi}
+                ls ${kaldi}/bin
+                ls ${kaldi}/lib
+                ls ${kaldi}/share
+                ls ${kaldi}/include
                 ls ${kaldi}/kaldi/include
                 KALDI_ROOT=${kaldi}/kaldi OPENFST_ROOT=${kaldi}/openfst OPENBLAS_ROOT=${kaldi}/openblas  make
                '';
