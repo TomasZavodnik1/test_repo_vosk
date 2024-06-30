@@ -28,10 +28,10 @@ stdenv.mkDerivation rec {
                 KALDI_ROOT=${kaldi-pkg}/kaldi OPENFST_ROOT=${kaldi-pkg}/openfst OPENBLAS_ROOT=${kaldi-pkg}/openblas  make
                '';
  installPhase = '' #create output dir
-                   mkdir -p $out/lib
-                   cp vosk_api.h $out
+                   mkdir -p $out/src
+                   cp * $out/src
                    #copy created libs to output directory
-                   find ../ -name "*.so" -exec mv {} $out/ \;
+                   find ../ -name "*.so" -exec mv {} $out/src/ \;
 	'';
 }
 

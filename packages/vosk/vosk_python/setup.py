@@ -15,6 +15,7 @@ machine = os.environ.get('VOSK_MACHINE', platform.machine())
 
 # Copy precompmilled libraries
 for lib in glob.glob(os.path.join(vosk_source, "src/lib*.*")):
+    print("{0}".format( lib ))
     print ("Adding library", lib)
     shutil.copy(lib, "vosk")
 
