@@ -35,7 +35,7 @@ stdenv.mkDerivation rec {
                 cd src
                 
                 #ls /nix/store
-                find ${kaldi-pkg} -name "*lapack*"
+                find ${kaldi-pkg} -name "*openblas.a"
                                 
                 #ls -la ${kaldi-pkg}/openfst/lib
                 
