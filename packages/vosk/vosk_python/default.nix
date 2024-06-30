@@ -6,7 +6,7 @@ buildPythonApplication {
   pname = "vosk-python";
   version = "1.0";
 
-  nativeBuildInputs = [ (callPackage ../vosk {}) ];
+  nativeBuildInputs = [ (callPackage ../vosk {}) cffi requests tqdm srt websockets ];
   #dontUnpack = false;
   src = ./.;
   #unpackPhase = " find / -name 'source.tar' 
