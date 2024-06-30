@@ -51,7 +51,7 @@ stdenv.mkDerivation rec {
                 find ../ -name "*.a" -exec mv {} $out/openblas/lib/ \;
                 find ../ -name "*.so" -exec mv {} $out/openblas/lib/ \;
                 ls -la $out/openblas/lib;
-                sadasdasd
+                #sadasdasd
                 cd ../../../../src
 	        
                 patchShebangs .
