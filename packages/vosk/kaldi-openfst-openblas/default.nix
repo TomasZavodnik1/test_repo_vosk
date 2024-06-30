@@ -49,6 +49,9 @@ stdenv.mkDerivation rec {
                 cd ../clapack
                 mkdir -p BUILD && cd BUILD && cmake .. && make -j 10 -C F2CLIBS && make -j 10 -C BLAS && make -j 10 -C SRC && find . -name "*.a" | xargs cp -t $out/openblas/lib
                 find . -name "*.a" -exec mv {} $out/openblas/lib/ \;
+                find . -name "*.so" -exec mv {} $out/openblas/lib/ \;
+                ls -la $out/openblas/lib;
+                sadasdasd
                 cd ../../../../src
 	        
                 patchShebangs .
