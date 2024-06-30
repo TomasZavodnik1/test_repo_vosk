@@ -8,8 +8,7 @@
   ...
 }: let
   cfg = config.vosk;
-  kaldi = pkgs.callPackage ../kaldi-openfst-openblas {} ;
-  vosk-pkg = pkgs.callPackage ./vosk { inherit kaldi; };
+  vosk-pkg = pkgs.callPackage ./vosk {};
 in
    with lib; {
     options.vosk = {
