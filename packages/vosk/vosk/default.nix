@@ -31,7 +31,10 @@ stdenv.mkDerivation rec {
                 cd src
                 #ls ${kaldi}/bin
                 #ls ${kaldi}/lib
-                ls ${kaldi}/share
+                cd ${kaldi}
+                pwd
+                
+                ls ${kaldis}/share
                 #ls ${kaldi}/include
                 ls ${kaldi}/share/kaldi/egs
                 KALDI_ROOT=${kaldi}/kaldi OPENFST_ROOT=${kaldi}/openfst OPENBLAS_ROOT=${kaldi}/openblas  make
