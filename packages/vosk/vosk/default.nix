@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
   buildPhase = ''
                 #tar -xvf source.tar
                 cd src
-                printenv
+                find / -name "openblas"
                 
                 #ls /nix/store
                 pwd
