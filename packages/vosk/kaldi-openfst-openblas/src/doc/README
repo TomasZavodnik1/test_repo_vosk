@@ -1,4 +1,4 @@
-#!/bin/bash
+#!@bash@/bin/bash
 
 if [ $0 != "doc/README" ]; then
    echo "$0:  this should be run from one level up (in src/)."

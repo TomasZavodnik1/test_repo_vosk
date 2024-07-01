@@ -1,4 +1,4 @@
-#!/bin/bash
+#!@bash@/bin/bash
 
 # Copyright 2017 University of Southern California (Author: Dogan Can)
 

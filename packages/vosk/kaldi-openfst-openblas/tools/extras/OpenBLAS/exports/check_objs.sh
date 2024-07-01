@@ -1,4 +1,4 @@
-#!/bin/bash
+#!@bash@/bin/bash
 
 while read OBJ; do
 	

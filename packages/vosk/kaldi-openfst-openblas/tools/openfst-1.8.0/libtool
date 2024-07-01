@@ -1,4 +1,4 @@
-#! /bin/bash
+#! @bash@/bin/bash
 # Generated automatically by config.status (openfst) 1.8.0
 # Libtool was configured on host nixos:
 # NOTE: Changes made to this file will be lost: look at ltmain.sh.
@@ -57,7 +57,7 @@ fast_install=needless
 shared_archive_member_spec=
 
 # Shell to use when invoking shell scripts.
-SHELL="/bin/bash"
+SHELL="@bash@/bin/bash"
 
 # An echo program that protects backslashes.
 ECHO="printf %s\\n"

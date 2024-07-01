@@ -1,4 +1,4 @@
-SHELL := ${pkgs.bash}/bin/bash
+SHELL := @bash@/bin/bash
 
 ifeq ($(KALDI_FLAVOR), dynamic)
   ifeq ($(shell uname), Darwin)

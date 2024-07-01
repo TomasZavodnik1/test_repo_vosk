@@ -427,7 +427,7 @@ export LC_ALL=C
 
 c.) \c run.sh
 \code{.sh}
-#!/bin/bash
+#!@bash@/bin/bash
 
 . ./path.sh || exit 1
 . ./cmd.sh || exit 1

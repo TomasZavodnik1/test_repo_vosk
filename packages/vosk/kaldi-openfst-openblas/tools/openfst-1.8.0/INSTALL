@@ -196,7 +196,7 @@ overridden in the site shell script).
 Unfortunately, this technique does not work for `CONFIG_SHELL' due to
 an Autoconf bug.  Until the bug is fixed you can use this workaround:
 
-     CONFIG_SHELL=/bin/bash /bin/bash ./configure CONFIG_SHELL=/bin/bash
+     CONFIG_SHELL=@bash@/bin/bash @bash@/bin/bash ./configure CONFIG_SHELL=@bash@/bin/bash
 
 `configure' Invocation
 ======================

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!@bash@/bin/bash
 #
 # Copyright 2021 Hang Lyu
 #           2021 kkm

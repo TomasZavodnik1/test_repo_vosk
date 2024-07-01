@@ -1,4 +1,4 @@
-#!/bin/bash
+#!@bash@/bin/bash
 #
 # 2020 Author Jiayu DU
 # Apache 2.0

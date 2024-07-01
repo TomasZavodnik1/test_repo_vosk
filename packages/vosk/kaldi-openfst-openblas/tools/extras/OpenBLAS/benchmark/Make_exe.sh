@@ -1,4 +1,4 @@
-#!/bin/bash
+#!@bash@/bin/bash
 
 for f in *.goto *.acml *.mkl *.atlas
 do

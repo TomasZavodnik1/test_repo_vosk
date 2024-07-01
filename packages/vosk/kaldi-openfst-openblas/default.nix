@@ -31,7 +31,8 @@ stdenv.mkDerivation rec {
   
   buildPhase = ''
                 #tar -xzvf source.tar
-                substituteAll { src = ./.; inherit bash; }
+                #substituteAll { src = ./.; inherit bash; }
+                grep -rl '@bash@' | xargs sed -i 's/@bash@/${bash}//g'
                 cd tools/openfst/
                 sh configure --enable-static --enable-ngram-fsts --enable-ngram-python
                 make
@@ -56,8 +57,8 @@ stdenv.mkDerivation rec {
                 cd ../../../../src
 	        
                 patchShebangs .
-                substituteInPlace Makefile --replace /bin/bash ${pkgs.bash}/bin/bash
-                substituteInPlace makefiles/default_rules.mk --replace /bin/bash ${pkgs.bash}/bin/bash
+                substituteInPlace Makefile --replace @bash@/bin/bash @bash@/bin/bash
+                substituteInPlace makefiles/default_rules.mk --replace @bash@/bin/bash @bash@/bin/bash
                                 
                 sh configure --openblas-root=$out/openblas --static --fst-root=$out/openfst --fst-version=1.8.0
                 make -j 10 online2 lm rnnlm

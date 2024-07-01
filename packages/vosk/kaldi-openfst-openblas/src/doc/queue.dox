@@ -195,7 +195,7 @@ does not exist and the <tt>--config</tt> option is not specified, and may be use
 point for your own config file:
 \verbatim
 # Default configuration
-command qsub -v PATH -cwd -S /bin/bash -j y -l arch=*64*
+command qsub -v PATH -cwd -S @bash@/bin/bash -j y -l arch=*64*
 option mem=* -l mem_free=$0,ram_free=$0
 option mem=0          # Do not add anything to qsub_opts
 option num_threads=* -pe smp $0
@@ -249,7 +249,7 @@ We then set the relevant <tt>$cmd</tt> variable to the value
 Note that a simpler way to have done this would have been
 to simply edit the <tt>command</tt> line in the config file to read
 \verbatim
-command qsub -v PATH -cwd -S /bin/bash -j y -l arch=*64* -l 'hostname=!g01*&!g02*&!b06*'
+command qsub -v PATH -cwd -S @bash@/bin/bash -j y -l arch=*64* -l 'hostname=!g01*&!g02*&!b06*'
 \endverbatim
 and if we had done that, it would not have been necessary to add <tt>--allow-k20 false</tt>.
 
@@ -424,7 +424,7 @@ so it says
 qname               all.q
 \endverbatim
 Also change the field <tt>shell</tt> from <tt>/bin/csh</tt>
-to <tt>/bin/bash</tt>; this is a better default, although it shouldn't affect
+to <tt>@bash@/bin/bash</tt>; this is a better default, although it shouldn't affect
 Kaldi.  Quitting the editor will save the changes,  although if you made syntax
 errors, <tt>qconf</tt> will reject your edits.  Later on we'll make more
 changes to this queue by typing <tt>qconf -mq all.q</tt>.
@@ -532,7 +532,7 @@ prolog                /var/lib/gridengine/default/common/prolog.sh
  accessed, to give NFS some time to sync in case the scripts were written very
  recently and haven't yet propagated across the grid:
 \verbatim
-#!/bin/bash
+#!@bash@/bin/bash
 
 function test_ok {
   if [ ! -z "$JOB_SCRIPT" ] && [ "$JOB_SCRIPT" != QLOGIN ] && [ "$JOB_SCRIPT" != QRLOGIN ]; then
