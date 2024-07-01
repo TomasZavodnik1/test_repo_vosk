@@ -9,7 +9,6 @@
 }: let
   cfg = config.vosk;
   vosk-pkg = pkgs.callPackage ./vosk_python {};
-  vosk-pkg-test = pkgs.callPackage ./vosk_python_test {};
 
 in
    with lib; {
@@ -26,7 +25,6 @@ in
     config = mkIf cfg.enable {
       environment.systemPackages = [
         vosk-pkg
-        vosk-pkg-test
       ];
   };
 

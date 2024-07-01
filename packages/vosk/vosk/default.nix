@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
   dontUseCmakeConfigure=true;
   
   buildPhase = ''
-                #tar -xvf source.tar
+                tar -xzvf source.tar
                 cd src
                 
                 #compile the vosk lib, set manually the required inputs

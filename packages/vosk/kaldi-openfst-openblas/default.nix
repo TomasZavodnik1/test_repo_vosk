@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
   doCheck=false;
   
   buildPhase = ''
-                #tar -xvf source.tar
+                tar -xzvf source.tar
                 cd tools/openfst/
                 sh configure --enable-static --enable-ngram-fsts --enable-ngram-python
                 make
