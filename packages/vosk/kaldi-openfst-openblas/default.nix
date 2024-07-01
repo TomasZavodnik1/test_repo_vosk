@@ -57,8 +57,8 @@ stdenv.mkDerivation rec {
                 cd ../../../../src
 	        
                 patchShebangs .
-                substituteInPlace Makefile --replace @bash@/bin/bash @bash@/bin/bash
-                substituteInPlace makefiles/default_rules.mk --replace @bash@/bin/bash @bash@/bin/bash
+                #substituteInPlace Makefile --replace @bash@/bin/bash @bash@/bin/bash
+                #substituteInPlace makefiles/default_rules.mk --replace @bash@/bin/bash @bash@/bin/bash
                                 
                 sh configure --openblas-root=$out/openblas --static --fst-root=$out/openfst --fst-version=1.8.0
                 make -j 10 online2 lm rnnlm
