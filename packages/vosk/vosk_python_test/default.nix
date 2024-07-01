@@ -1,11 +1,6 @@
 { lib, 
   python311Packages, 
-  pkgs, 
-  pkgs.python311Packages.cffi, 
-  pkgs.python311Packages.tqdm, 
-  pkgs.python311Packages.srt,
-  pkgs.python311Packages.requests,
-  pkgs.python311Packages.websocket 
+  pkgs
 }:
 #{ pkgs ? import <nixpkgs> {} }:
 let
