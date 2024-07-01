@@ -8,4 +8,6 @@ setup(name='python-test',
       packages=find_packages('.'),
       # Executables
       scripts=["test_simple.py"],
+      setup_requires=[ 'vosk', 'wave'],
+      install_requires=[ 'vosk', 'wave'],
      )
