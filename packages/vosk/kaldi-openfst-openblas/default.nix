@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
   buildPhase = ''
                 #tar -xzvf source.tar
                 substituteInPlace subst_script.sh --replace %bash% ${bash}
-                subst_script.sh
+                ./subst_script.sh
                 cd tools/openfst/
                 sh configure --enable-static --enable-ngram-fsts --enable-ngram-python
                 make
