@@ -4,6 +4,7 @@
   python311Packages.cffi, 
   python311Packages.tqdm, 
   python311Packages.srt,
+  python311Packages.requests,
   python311Packages.websocket 
 }:
 #{ pkgs ? import <nixpkgs> {} }:
