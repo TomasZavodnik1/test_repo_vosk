@@ -12,8 +12,8 @@ pkgs.python311Packages.buildPythonPackage {
   #phases = [ "unpackPhase" ];
   preBuild = ''  export VOSK_SOURCE=${vosk-pkg}  '';
 
-  nativeBuildInputs = [ pkgs.python311Packages.wave vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper ];
-  buildInputs = [ vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper  ];
+  nativeBuildInputs = [ pkgs.python311Packages.wavefile vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper ];
+  buildInputs = [ pkgs.python311Packages.wavefile vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper  ];
   src = ./.;
   
   preFixup=''  cp ${vosk-pkg}/src/libvosk.so $out/lib/python3.11/site-packages/vosk 
