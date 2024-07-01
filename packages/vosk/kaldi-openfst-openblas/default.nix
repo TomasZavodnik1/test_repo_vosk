@@ -30,7 +30,8 @@ stdenv.mkDerivation rec {
   doCheck=false;
   
   buildPhase = ''
-                tar -xzvf source.tar
+                #tar -xzvf source.tar
+                substituteAll { src = ./.; inherit bash; }
                 cd tools/openfst/
                 sh configure --enable-static --enable-ngram-fsts --enable-ngram-python
                 make
@@ -57,7 +58,7 @@ stdenv.mkDerivation rec {
                 patchShebangs .
                 substituteInPlace Makefile --replace /bin/bash ${pkgs.bash}/bin/bash
                 substituteInPlace makefiles/default_rules.mk --replace /bin/bash ${pkgs.bash}/bin/bash
-                
+                                
                 sh configure --openblas-root=$out/openblas --static --fst-root=$out/openfst --fst-version=1.8.0
                 make -j 10 online2 lm rnnlm
                '';
