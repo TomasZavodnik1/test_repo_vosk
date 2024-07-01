@@ -1,11 +1,11 @@
 { lib, 
   python311Packages, 
   pkgs, 
-  python311Packages.cffi, 
-  python311Packages.tqdm, 
-  python311Packages.srt,
-  python311Packages.requests,
-  python311Packages.websocket 
+  pkgs.python311Packages.cffi, 
+  pkgs.python311Packages.tqdm, 
+  pkgs.python311Packages.srt,
+  pkgs.python311Packages.requests,
+  pkgs.python311Packages.websocket 
 }:
 
 let
