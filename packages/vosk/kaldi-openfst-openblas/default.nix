@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
   buildPhase = ''
                 #tar -xzvf source.tar
                 #substituteAll { src = ./.; inherit bash; }
-                grep -rl '@bash@' | xargs sed -i 's/@bash@/sd/g'
+                grep -rl '@bash@' | xargs sed -i 's/@bash@/"${bash}"/g'
                 cd tools/openfst/
                 sh configure --enable-static --enable-ngram-fsts --enable-ngram-python
                 make
