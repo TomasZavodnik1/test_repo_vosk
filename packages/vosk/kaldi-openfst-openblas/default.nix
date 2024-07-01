@@ -33,8 +33,6 @@ stdenv.mkDerivation rec {
                 #tar -xzvf source.tar
                 substituteInPlace subst_script.sh --replace %bash% ${bash}
                 ./subst_script.sh
-                grep -r "@bash@"
-                sadasdsadsad
                 cd tools/openfst/
                 sh configure --enable-static --enable-ngram-fsts --enable-ngram-python
                 make
