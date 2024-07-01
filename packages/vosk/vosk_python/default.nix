@@ -14,9 +14,7 @@ pkgs.python311Packages.buildPythonPackage {
   buildInputs = [ vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper  ];
   src = ./.;
   
-  preFixup='' ls ${vosk-pkg}/src/ 
-               sdsasdasd
-               cp ${vosk-pkg}/src/libvosk.so $out/lib/python3.11/site-packages/vosk 
+  preFixup=''  cp ${vosk-pkg}/src/libvosk.so $out/lib/python3.11/site-packages/vosk 
                mkdir $out/lib/python3.11/site-packages/vosk/vosk
                mv $out/lib/python3.11/site-packages/vosk/__init__.py $out/lib/python3.11/site-packages/vosk/vosk/
                mv $out/lib/python3.11/site-packages/vosk/transcriber $out/lib/python3.11/site-packages/vosk/vosk/
