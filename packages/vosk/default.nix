@@ -8,7 +8,7 @@
   ...
 }: let
   cfg = config.vosk;
-  vosk-pkg = pkgs.callPackage ./kali-openfst-openblas {};
+  vosk-pkg = pkgs.callPackage ./kaldi-openfst-openblas {};
 
 in
    with lib; {
