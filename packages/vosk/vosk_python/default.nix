@@ -1,5 +1,12 @@
-#{ lib, python311Packages, pkgs }:
-{ pkgs ? import <nixpkgs> {} }:
+{ lib, 
+  python311Packages, 
+  pkgs, 
+  cffi, 
+  tqdm, 
+  requests,
+  srt,
+  websocket 
+}:
 
 let
    vosk-pkg = pkgs.callPackage ../vosk {};
@@ -15,8 +22,5 @@ pkgs.python311Packages.buildPythonPackage {
   src = ./.;
   
   preFixup=''  cp ${vosk-pkg}/src/libvosk.so $out/lib/python3.11/site-packages/vosk 
-               mkdir $out/lib/python3.11/site-packages/vosk/vosk
-               mv $out/lib/python3.11/site-packages/vosk/__init__.py $out/lib/python3.11/site-packages/vosk/vosk/
-               mv $out/lib/python3.11/site-packages/vosk/transcriber $out/lib/python3.11/site-packages/vosk/vosk/
                '';
 }
