@@ -4,7 +4,7 @@ import os
 from cffi import FFI
 
 vosk_root=os.environ.get("VOSK_SOURCE", "../vosk")
-cpp_command = "cpp " + vosk_root + "/src/vosk_api.h"
+cpp_command = "$CC " + vosk_root + "/src/vosk_api.h"
 print( cpp_command )
 ffibuilder = FFI()
 ffibuilder.set_source("vosk.vosk_cffi", None)
