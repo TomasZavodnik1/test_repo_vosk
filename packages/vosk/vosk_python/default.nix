@@ -14,6 +14,7 @@ pkgs.python311Packages.buildPythonPackage {
                  pwd
                  
                  cp -r ${vosk-pkg}/* /build
+                 chmod -R 777 /build
                  substituteInPlace vosk_builder.py  --replace "$cc" "c++"
   '';
 
