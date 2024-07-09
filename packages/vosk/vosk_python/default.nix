@@ -12,7 +12,7 @@ pkgs.python311Packages.buildPythonPackage {
   #phases = [ "unpackPhase" ];
   preBuild = ''  export VOSK_SOURCE=$out/tmp;
                  mkdir -p $out/tmp
-                 cp -r ${vosk-pkg}/* $tmp/tmp/
+                 cp -r ${vosk-pkg}/* $out/tmp/
                  substituteInPlace vosk_builder.py  --replace "$cc" "c++"
   '';
 
