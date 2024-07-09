@@ -11,7 +11,7 @@ pkgs.python311Packages.buildPythonPackage {
   version = "1.0";
   #phases = [ "unpackPhase" ];
   preBuild = ''  export VOSK_SOURCE=${vosk-pkg};
-                 substituteInPlace vosk_builder.py  --replace "$cc" ${cc}
+                 substituteInPlace vosk_builder.py  --replace "$cc" "c++"
   '';
 
   nativeBuildInputs = [ pkgs.python311Packages.wavefile vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper ];
