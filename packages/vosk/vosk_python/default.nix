@@ -13,7 +13,6 @@ pkgs.python311Packages.buildPythonPackage {
   #phases = [ "unpackPhase" ];
   preBuild = ''  export VOSK_SOURCE=/build;
                  cp -r ${vosk-pkg}/* /build
-                 find / -name "cpp"
                  chmod -R 777 /build
                  substituteInPlace vosk_builder.py  --replace %cpp $gcc/bin/cpp
   '';
