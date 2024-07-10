@@ -1,8 +1,9 @@
-#{ lib, 
-#  python311Packages, 
-#  pkgs
-#}:
-{ pkgs ? import <nixpkgs> {} }:
+{ lib, 
+  python311Packages, 
+  gcc,
+  pkgs
+}:
+#{ pkgs ? import <nixpkgs> {} }:
 
 let
    vosk-pkg = pkgs.callPackage ../vosk {};
