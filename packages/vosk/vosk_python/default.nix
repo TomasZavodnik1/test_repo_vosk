@@ -14,9 +14,8 @@ pkgs.python311Packages.buildPythonPackage {
   preBuild = ''  export VOSK_SOURCE=/build;
                  cp -r ${vosk-pkg}/* /build
                  find / -name "cpp"
-                 which gcc
                  chmod -R 777 /build
-                 substituteInPlace vosk_builder.py  --replace %cpp cpp
+                 substituteInPlace vosk_builder.py  --replace %cpp $gcc/bin/cpp
   '';
 
   nativeBuildInputs = [ pkgs.which pkgs.gcc pkgs.python311Packages.wavefile vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper ];
