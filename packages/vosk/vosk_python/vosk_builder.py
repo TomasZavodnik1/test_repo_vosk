@@ -9,6 +9,6 @@ print( cpp_command )
 ffibuilder = FFI()
 ffibuilder.set_source("vosk.vosk_cffi", None)
 ffibuilder.cdef(os.popen(cpp_command).read())
-asddasdasdasd
+
 #if __name__ == '__main__':
 ffibuilder.compile(verbose=True)
