@@ -1,7 +1,8 @@
-{ lib, 
-  python311Packages, 
-  pkgs
-}:
+#{ lib, 
+#  python311Packages, 
+#  pkgs
+#}:
+{ pkgs ? import <nixpkgs> {} }:
 
 let
    vosk-pkg = pkgs.callPackage ../vosk {};
@@ -11,15 +12,13 @@ pkgs.python311Packages.buildPythonPackage {
   version = "1.0";
   #phases = [ "unpackPhase" ];
   preBuild = ''  export VOSK_SOURCE=/build;
-                 pwd
-                 
                  cp -r ${vosk-pkg}/* /build
                  chmod -R 777 /build
-                 substituteInPlace vosk_builder.py  --replace "$cc" "c++"
+                 substituteInPlace vosk_builder.py  --replace %cpp cpp
   '';
 
-  nativeBuildInputs = [ pkgs.python311Packages.wavefile vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper ];
-  propagatedBuildInputs = [ pkgs.python311Packages.wavefile vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper  ];
+  nativeBuildInputs = [ pkgs.which pkgs.gnumake pkgs.python311Packages.wavefile vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper ];
+  propagatedBuildInputs = [ pkgs.which pkgs.gnumake pkgs.python311Packages.wavefile vosk-pkg pkgs.python311Packages.cffi pkgs.python311Packages.requests pkgs.python311Packages.tqdm pkgs.python311Packages.srt pkgs.python311Packages.websockets pkgs.python311Packages.srt pkgs.python311Packages.zipfile2 pkgs.python311Packages.pyzipper  ];
   
   src = ./.;
   

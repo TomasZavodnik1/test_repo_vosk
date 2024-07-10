@@ -27,7 +27,7 @@
 #include <string.h>
 
 using namespace kaldi;
-
+sadodkwqikwqidkjwqid
 VoskModel *vosk_model_new(const char *model_path)
 {
     try {
